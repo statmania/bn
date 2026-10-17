@@ -45,7 +45,7 @@ image: ../img/posts/c22ef425fb.jpg
 >   geom\_bar(fill=brewer.pal(n=9, name='GnBu')\[9:5\])+
 >   labs(title="Diamonds Quality Bar Plot")
 
-এখানে brewer.pal কীভাবে কাজ করে বুঝতে অসুবিধা হলে [এখান থেকে প্লট কালারিং এর উপায়গুলো দেখে নিন](https://www.statmania.info/2018/07/r-colors.html)। বর্ণিত ৯টি উপায়ের মধ্যে ৯ নম্বরটি দেখতে হবে। 
+এখানে brewer.pal কীভাবে কাজ করে বুঝতে অসুবিধা হলে [এখান থেকে প্লট কালারিং এর উপায়গুলো দেখে নিন](2018-07-r-colors.html)। বর্ণিত ৯টি উপায়ের মধ্যে ৯ নম্বরটি দেখতে হবে। 
 
   ----------------------------------
    ![](../img/posts/ddb6d2b500.jpg)

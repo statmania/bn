@@ -65,7 +65,7 @@ filename অংশে আপনি যে লোকশনে সেভ করত
 
 **আরও পড়ুন **
 
-☛ [বাহারি ফুলের ডিজাইন](https://www.statmania.info/2018/06/floweR.html)
+☛ [বাহারি ফুলের ডিজাইন](2018-06-floweR.html)
 
-☛ [একই প্লটে অনেকগুলো টাইম সিরিজ গ্রাফ](https://www.statmania.info/2018/06/multiple-ts-plot.html)
+☛ [একই প্লটে অনেকগুলো টাইম সিরিজ গ্রাফ](2018-06-multiple-ts-plot.html)
 :::

@@ -311,7 +311,7 @@ e কে 'একটি ধ্রুবক, যার মান প্রয় ২.
 :::
 
 ::: {style="text-align: left;"}
-এই লিমিটটা [অভিসারী](http://www.statmania.info/2016/08/achilles-vs-tortoise.html) হয়। তার সপক্ষে [প্রমাণও](http://planetmath.org/convergenceofthesequence11nn) আছে। 
+এই লিমিটটা [অভিসারী](2016-08-achilles-vs-tortoise.html) হয়। তার সপক্ষে [প্রমাণও](http://planetmath.org/convergenceofthesequence11nn) আছে। 
 :::
 
 ::: {style="text-align: left;"}

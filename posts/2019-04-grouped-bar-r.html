@@ -348,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p>install.packages(“gcookbook”) library(gcookbook)</p>
 </blockquote>
-<p>এই প্যাকেজের&nbsp;cabbage_exp ডেটা ব্যবহার করব। আপনি <a href="https://www.statmania.info/2018/02/install-r.html">Rstudio</a>&nbsp;ব্যবহার না করে থাকলে এই ডেটা লোড করে নিন। data(cabbage_exp) কমান্ড দিয়ে।&nbsp;</p>
+<p>এই প্যাকেজের&nbsp;cabbage_exp ডেটা ব্যবহার করব। আপনি <a href="2018-02-install-r.html">Rstudio</a>&nbsp;ব্যবহার না করে থাকলে এই ডেটা লোড করে নিন। data(cabbage_exp) কমান্ড দিয়ে।&nbsp;</p>
 <p>এবার আকাঁ শুরু করা যাক।&nbsp;</p>
 <blockquote class="blockquote">
 <p>ggplot(cabbage_exp,aes(x=Date, y=Weight, fill=Cultivar))+ &nbsp; geom_bar(position = “dodge”, stat = “identity”)+ &nbsp; ggtitle(“Grouped Bar Chart of Weight by Cultivar”)</p>
@@ -360,7 +360,7 @@ ul.task-list li input[type="checkbox"] {
 <p>এবার আমরা কিছু অপশন পাল্টে দেখি।&nbsp;</p>
 <ul>
 <li>আমরা গ্রুপড না করে স্ট্যাকড বার আঁকব। position = “stack”</li>
-<li>অটো কালারে বদলে RColorBrewer&nbsp;প্যাকেজ দিয়ে কালার দেব। <a href="https://www.statmania.info/2019/04/r-ggplot2-rcolorbrewer.html">আরও দেখুন এখানে</a>।</li>
+<li>অটো কালারে বদলে RColorBrewer&nbsp;প্যাকেজ দিয়ে কালার দেব। <a href="2019-04-r-ggplot2-rcolorbrewer.html">আরও দেখুন এখানে</a>।</li>
 </ul>
 <blockquote class="blockquote">
 <p>ggplot(cabbage_exp,aes(x=Date, y=Weight, fill=Cultivar))+ &nbsp; geom_bar(position = “stack”, stat = “identity”)+ &nbsp; scale_fill_brewer(palette = “Paired”)+ &nbsp; ggtitle(“Grouped Bar Chart of Weight by Cultivar”)</p>
@@ -380,7 +380,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="separator" style="clear: both; text-align: center;">
 <p><img src="../img/posts/1015692332.jpg" class="img-fluid"></p>
 </div>
-<p>আমরা পেয়ে গেলাম কাঙ্খিত চার্ট। সরল বার চার্ট আঁকার কৌশল <a href="https://www.statmania.info/2019/04/r-ggplot2-rcolorbrewer.html">দেখে নিন এখানে</a>।</p>
+<p>আমরা পেয়ে গেলাম কাঙ্খিত চার্ট। সরল বার চার্ট আঁকার কৌশল <a href="2019-04-r-ggplot2-rcolorbrewer.html">দেখে নিন এখানে</a>।</p>
 <p><strong>পুনশ্চ</strong>: dplyr বা magrittr প্যাকেজ লোড করা থাকলে ggplot(cabbage_exp,aes অংশটুকুকে আরও সহজ করেও লেখা যায়।</p>
 <p>cabbage_exp&nbsp;%&gt;% ggplot(aes(…</p>
 <p>%&gt;% কে বলা হই পাইপ অপারেটর। dplyr প্যাকেজে এটার ব্যবহার খুব দারুণ।&nbsp;</p>

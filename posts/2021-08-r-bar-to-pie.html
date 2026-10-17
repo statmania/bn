@@ -391,8 +391,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="../img/posts/ded24a0620.png" class="img-fluid"></p>
 </div>
 <p>এবারে&nbsp;<em>RColorBrewer</em> প্যাকেজ দিয়ে বারের কালারগুলো সাজিয়ে নেই। না করলেও ক্ষতি নেই। পাশাপাশি বারের মধ্যেই প্রতিটি বারের সাথে সংশ্লিষ্ট সংখ্যাগুলো দেখিয়ে দেই।&nbsp;</p>
-<p>☛&nbsp;<a href="https://www.statmania.info/2019/04/r-ggplot2-rcolorbrewer.html">RColorBrewer যেভাবে প্লটকে সুন্দর করে</a></p>
-<p>☛&nbsp;<a href="https://www.statmania.info/2019/10/new-scatter.html">প্লট লেবেলিং করবেন যেভাবে</a></p>
+<p>☛&nbsp;<a href="2019-04-r-ggplot2-rcolorbrewer.html">RColorBrewer যেভাবে প্লটকে সুন্দর করে</a></p>
+<p>☛&nbsp;<a href="2019-10-new-scatter.html">প্লট লেবেলিং করবেন যেভাবে</a></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>us_races <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Race, Percentage, <span class="at">fill =</span> Race))<span class="sc">+</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.6</span>)<span class="sc">+</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)<span class="sc">+</span></span>
@@ -463,7 +463,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 <p>চাইলে তো আরও কত কিছুই করা যায়। করার আগে চিন্তা করতে হবে সেটা কতটা অর্থবহ।&nbsp;</p>
-<p>পাই চার্ট ভাল না লাগলে যদি ডোনাট চার্ট আঁকতে চান, <a href="https://www.statmania.info/2021/08/donut.html">সেটাও করতে পারেন</a>।&nbsp;</p>
+<p>পাই চার্ট ভাল না লাগলে যদি ডোনাট চার্ট আঁকতে চান, <a href="2021-08-donut.html">সেটাও করতে পারেন</a>।&nbsp;</p>
 <div class="separator" style="clear: both; text-align: center;">
 <p><img src="../img/posts/cdc6413279.png" class="img-fluid"></p>
 </div>

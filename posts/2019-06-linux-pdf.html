@@ -380,11 +380,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>অথচ কাজগুলো করা যায় কয়েক শব্দের এক লাইন কোড দিয়েই। এখানে পিডিএফ ও ইমেজ বিষয়ক এমন কয়েকটি কমান্ডই দেখব আমরা।</p>
 <p>কাজটা আমরা করব কমান্ড লাইনে। আপনি লিনাক্স ইউজার হলে তো কথাই নেই। না হলেও সমস্যা নেই। WSL ইনস্টল করে নিলেই হলো। <a href="https://www.wikihow.com/Enable-the-Windows-Subsystem-for-Linux">কীভাবে করবেন দেখে নিন এখানে</a>।</p>
-<p><strong>আরও পড়ুন</strong> ☛&nbsp;<a href="https://www.statmania.info/2019/06/linux-intro.html">লিনাক্স কমান্ড লাইন: হাতেখড়ি</a></p>
+<p><strong>আরও পড়ুন</strong> ☛&nbsp;<a href="2019-06-linux-intro.html">লিনাক্স কমান্ড লাইন: হাতেখড়ি</a></p>
 <p>এবার তাহলে টার্মিনাল বা WSL ওপেন করুন। এখানের কাজগুলো করতে হলে আমাদের একটি বিখ্যাত প্যাকেজ লাগবে। নাম&nbsp;ImageMagick। এটা <a href="https://www.tecmint.com/install-imagemagick-on-debian-ubuntu/">ইনস্টল করে</a> নিন তাহলে। লিঙ্কে বিস্তারিত বলা আছে। অত ঝামেলায় যেতে না চাইলে নীচের কোডটা রান করে দেখুন।</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install imagemagick</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>১। পিডিএফ জোড়া দিতে</strong></p>
-<p>মনে করুন, আপনার <a href="https://www.statmania.info/2019/06/linux-intro.html">ওয়ার্কিং ডিরেক্টরিতে</a> অনেকগুলো পিডিএফ ফাইল আছে। এর মধ্যে কয়েক্টিকে আপনি জোড়া দিতে চাচ্ছেন। ধরুন আমরা pdf1.pdf, pdf2.pdf, pdf3.pdf এই তিনটি ফাইলকে জোড়া দিয়ে merged.pdf নামে একটি ফাইল বানাব।</p>
+<p>মনে করুন, আপনার <a href="2019-06-linux-intro.html">ওয়ার্কিং ডিরেক্টরিতে</a> অনেকগুলো পিডিএফ ফাইল আছে। এর মধ্যে কয়েক্টিকে আপনি জোড়া দিতে চাচ্ছেন। ধরুন আমরা pdf1.pdf, pdf2.pdf, pdf3.pdf এই তিনটি ফাইলকে জোড়া দিয়ে merged.pdf নামে একটি ফাইল বানাব।</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span> pdf1.pdf pdf2.pdf merged.pdf</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>কাজটা একইরকম সহজ করে করা যায় pdfunite টুল দিয়েও। সেক্ষেত্রে ওপরে convert এর জায়গায় শুধু pdfunite লিখলেই হবে।</p>
 <p>অথবা ধরুন, আমার ওয়ার্কিং ডিরেক্টরির সবগুলো পিডিএফ নিয়েই নতুন একটা পিডিএফ বানাব। সেটা আরও সহজ।</p>

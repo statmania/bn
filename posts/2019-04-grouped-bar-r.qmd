@@ -30,7 +30,7 @@ image: ../img/posts/4db787a934.jpg
 > install.packages("gcookbook")
 > library(gcookbook)
 
-এই প্যাকেজের cabbage\_exp ডেটা ব্যবহার করব। আপনি [Rstudio](https://www.statmania.info/2018/02/install-r.html) ব্যবহার না করে থাকলে এই ডেটা লোড করে নিন। data(cabbage\_exp) কমান্ড দিয়ে। 
+এই প্যাকেজের cabbage\_exp ডেটা ব্যবহার করব। আপনি [Rstudio](2018-02-install-r.html) ব্যবহার না করে থাকলে এই ডেটা লোড করে নিন। data(cabbage\_exp) কমান্ড দিয়ে। 
 
 এবার আকাঁ শুরু করা যাক। 
 
@@ -47,7 +47,7 @@ image: ../img/posts/4db787a934.jpg
 এবার আমরা কিছু অপশন পাল্টে দেখি। 
 
 -   আমরা গ্রুপড না করে স্ট্যাকড বার আঁকব। position = "stack"
--   অটো কালারে বদলে RColorBrewer প্যাকেজ দিয়ে কালার দেব। [আরও দেখুন এখানে](https://www.statmania.info/2019/04/r-ggplot2-rcolorbrewer.html)।
+-   অটো কালারে বদলে RColorBrewer প্যাকেজ দিয়ে কালার দেব। [আরও দেখুন এখানে](2019-04-r-ggplot2-rcolorbrewer.html)।
 
 > ggplot(cabbage\_exp,aes(x=Date, y=Weight, fill=Cultivar))+
 >   geom\_bar(position = "stack", stat = "identity")+
@@ -76,7 +76,7 @@ image: ../img/posts/4db787a934.jpg
 ![](../img/posts/1015692332.jpg)
 :::
 
-আমরা পেয়ে গেলাম কাঙ্খিত চার্ট। সরল বার চার্ট আঁকার কৌশল [দেখে নিন এখানে](https://www.statmania.info/2019/04/r-ggplot2-rcolorbrewer.html)।
+আমরা পেয়ে গেলাম কাঙ্খিত চার্ট। সরল বার চার্ট আঁকার কৌশল [দেখে নিন এখানে](2019-04-r-ggplot2-rcolorbrewer.html)।
 
 **পুনশ্চ**: dplyr বা magrittr প্যাকেজ লোড করা থাকলে ggplot(cabbage\_exp,aes অংশটুকুকে আরও সহজ করেও লেখা যায়।
 

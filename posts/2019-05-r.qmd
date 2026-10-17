@@ -19,8 +19,8 @@ draft: true
 অন্য দিকে, R হলো একটি ফ্রি ও ওপেনসোর্স পরিসংখ্যানিক প্রোগ্রামিং এনভায়রনমেন্ট। ডেটা থেকে ইনসাইট পেতে এর জুড়ি মেলা ভার।
 
 **আরও পড়ুন**
-[R কেন শিখবেন](https://www.statmania.info/2018/05/r-for-data-science.html)
-[R কীভাবে শিখবেন](https://www.statmania.info/2018/09/how-to-learn-R.html)
+[R কেন শিখবেন](2018-05-r-for-data-science.html)
+[R কীভাবে শিখবেন](2018-09-how-to-learn-R.html)
 
 এই বইয়ে যা যা থাকবে
 

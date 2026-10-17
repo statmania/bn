@@ -16,7 +16,7 @@ image: ../img/posts/7dff5fb99d.png
 R প্রোগ্রামিংকে বলা হয় সকল কাজের কাজী। পরিসংখ্যান ও ডেটা সায়েন্স এর কাজের জন্যে এর যাত্রা শুরু হলেও প্রতিনিয়ত এর ব্যাবহারের পরিসর বেড়েই চলছে। R দিয়ে কত কী করা যায় তার মোটামুটি একটা তালিকা [এখানে পাওয়া যাবে](https://cran.r-project.org/web/views/)। আর [এখানে পাওয়া যাবে বড় বড় প্রতিষ্ঠানে](https://www.listendata.com/2016/12/companies-using-r.html) কারা কী কাজে R প্রোগ্রামিং ব্যাবহার করেন তার তথ্য।
 
 **আরও পড়ুন**
-☛ [কেন শিখবেন R প্রোগ্রামিং?](https://www.statmania.info/2018/05/r-for-data-science.html)
+☛ [কেন শিখবেন R প্রোগ্রামিং?](2018-05-r-for-data-science.html)
 
 ::: {.separator style="clear: both; text-align: center;"}
 ![](../img/posts/7dff5fb99d.png)

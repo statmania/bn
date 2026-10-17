@@ -132,8 +132,8 @@ x_cum_div
 
 **
 আরও পড়ুন**
-☛ [R প্রোগ্রামিং: বাহারি ফুলের ডিজাইন](https://www.statmania.info/2018/06/floweR.html)
-☛ [গণিতের সবচেয়ে সুন্দর সমীকরণ ](https://www.statmania.info/2016/09/5-numbers-relation.html)
+☛ [R প্রোগ্রামিং: বাহারি ফুলের ডিজাইন](2018-06-floweR.html)
+☛ [গণিতের সবচেয়ে সুন্দর সমীকরণ ](2016-09-5-numbers-relation.html)
 
 **সূত্র**
 ১। [R-bloggers](https://www.r-bloggers.com/example-7-1-create-a-fibonacci-sequence/)

@@ -373,21 +373,21 @@ window.Quarto = {
 
 
 
-<p>চেনাজানা সংখ্যাগুলোর সূচকের নিয়ম তো আমরা জানি। <span class="math inline">\(3^2\)</span> এর অর্থ হলো <span class="math inline">\(3 \times 3\)</span>। মানে ৩ কে নিজের সাথে দুইবার গুণ করা। কিন্তু <a href="https://www.statmania.info/2019/07/imaginary-number.html">কাল্পনিক সংখ্যা</a>&nbsp; <span class="math inline">\(i^i\)</span> এর মানে কী? এর মানই বা কী হবে? কেন হবে? সেটার অর্থ কী?&nbsp;</p>
+<p>চেনাজানা সংখ্যাগুলোর সূচকের নিয়ম তো আমরা জানি। <span class="math inline">\(3^2\)</span> এর অর্থ হলো <span class="math inline">\(3 \times 3\)</span>। মানে ৩ কে নিজের সাথে দুইবার গুণ করা। কিন্তু <a href="2019-07-imaginary-number.html">কাল্পনিক সংখ্যা</a>&nbsp; <span class="math inline">\(i^i\)</span> এর মানে কী? এর মানই বা কী হবে? কেন হবে? সেটার অর্থ কী?&nbsp;</p>
 <p>&nbsp;</p>
 <p>জটিল জিনিসকে সহজ করে চিন্তা করি।&nbsp; <span class="math inline">\(i^i\)</span>কে <span class="math inline">\(1 \cdot i^i\)</span> চিন্তা করি। মানে আমরা ১ থেকে <span class="math inline">\(i^i\)</span> সংখ্যাটিতে যাব। আর ভাবব সেটার মানে আসলে কী।&nbsp;</p>
-<p><a href="https://www.statmania.info/2020/09/euler2.html">আগেই বলেছি</a>, ১ যেকোনো গুণের মৌলিক অংশ। ১-কে বলা হয় গুণজ অভেদ। যেভাবে যোগ-বিয়োগের মৌলিক অংশ শূন্য। যোগ-বিয়োগ করে কিছু না থাকলে থাকে শূন্য। গুণ (ও ভাগে) কাটাকাটি করে কিছু নেই মানে ১ আছে। যেমন, ৩কে ২ দিয়ে গুণ করা মানে আসলে ১কে ৬ দিয়ে গুণ করা। গুণ মানে আসলে ১কে ফুলিয়ে দেওয়া।</p>
+<p><a href="2020-09-euler2.html">আগেই বলেছি</a>, ১ যেকোনো গুণের মৌলিক অংশ। ১-কে বলা হয় গুণজ অভেদ। যেভাবে যোগ-বিয়োগের মৌলিক অংশ শূন্য। যোগ-বিয়োগ করে কিছু না থাকলে থাকে শূন্য। গুণ (ও ভাগে) কাটাকাটি করে কিছু নেই মানে ১ আছে। যেমন, ৩কে ২ দিয়ে গুণ করা মানে আসলে ১কে ৬ দিয়ে গুণ করা। গুণ মানে আসলে ১কে ফুলিয়ে দেওয়া।</p>
 <p>&nbsp;</p>
 <p>&nbsp;সংখ্যাকে একটু ভিন্নভাবে চিন্তা করতে শুরু করি। ধরুন একটি গ্রামে ৩০০ জন শিক্ষিত মানুষ আছেন। এখন আপনি চাইলেই এই ৩০০ সংখ্যাকে ভিন্নভাবে চিন্তা করতে পারেন। শুরু করি ১ থেকে। শুরুতে গ্রামে একজন শিক্ষিত মানুষ ছিলেন। তিনি এবং ক্রমেই তার ছাত্ররা বাকিদের শিক্ষিত করেছেন।&nbsp;</p>
 <p>&nbsp;</p>
-<p>যেহেতু বৃদ্ধির (growth) কথা চলে এল, তাই কাজে আসবে আসবে সূচকীয় ফাংশন। বৃদ্ধির সাথে সূচকীয় ফাংশনের সম্পর্ক নিয়ে কিঞ্চিত (তবে এ লেখার জন্যে যথেষ্ট) আলোচনা আছে <a href="https://www.statmania.info/2016/09/5-numbers-relation.html">এখানে</a>। সূচকীয় বৃদ্ধিটা মূলত ব্যবহার করা হয় অবিরাম বা প্রতি মুহূর্তেবৃদ্ধি পাওয়া জিনিসের ক্ষেত্রে।&nbsp;</p>
+<p>যেহেতু বৃদ্ধির (growth) কথা চলে এল, তাই কাজে আসবে আসবে সূচকীয় ফাংশন। বৃদ্ধির সাথে সূচকীয় ফাংশনের সম্পর্ক নিয়ে কিঞ্চিত (তবে এ লেখার জন্যে যথেষ্ট) আলোচনা আছে <a href="2016-09-5-numbers-relation.html">এখানে</a>। সূচকীয় বৃদ্ধিটা মূলত ব্যবহার করা হয় অবিরাম বা প্রতি মুহূর্তেবৃদ্ধি পাওয়া জিনিসের ক্ষেত্রে।&nbsp;</p>
 <p>&nbsp;সূচকীয় ফাংশনের ব্যবহারটা দেখে নেই। সূত্রটা এ রকম: <span class="math inline">\(P=P_oe^{rt}\)</span></p>
 <p>&nbsp;</p>
 <p>এখানে&nbsp;</p>
 <p>&nbsp;</p>
 <p>P =বৃদ্ধির পরে যা হবে। আমাদের উদাহরণে এটা ৩০০।&nbsp;</p>
 <p><span class="math inline">\(P_o\)</span>= শুরুতে যা ছিল। এটা আমাদের উদাহরণে ১। কারণ আমরা ধরে নিয়েছি ১ জন শিক্ষিত মানুষ আছেন।&nbsp;</p>
-<p>e = অয়লার সংখ্যা (২.৭১৮…)। <a href="https://www.statmania.info/2016/09/5-numbers-relation.html">এখানে</a> এটা নিয়েও আলোচনা আছে।&nbsp;</p>
+<p>e = অয়লার সংখ্যা (২.৭১৮…)। <a href="2016-09-5-numbers-relation.html">এখানে</a> এটা নিয়েও আলোচনা আছে।&nbsp;</p>
 <p>r = বৃদ্ধির হার&nbsp;</p>
 <p>t = <span class="math inline">\(P_o\)</span> থেকে <span class="math inline">\(P\)</span> হতে যতটুকু সময় লাগবে।&nbsp;</p>
 <p>&nbsp;</p>
@@ -411,7 +411,7 @@ window.Quarto = {
 <p>&nbsp;&nbsp;</p>
 <p><span class="math inline">\(i=e^{i \frac{\pi}{2}}\)</span></p>
 <p>&nbsp;</p>
-<p>একে আরেকভাবেও চিন্তা করা যায়। ১ থেকে (-১) এ যেতে আমরা ১৮০ ডিগ্রি ঘুরি। আর সেটাকে অয়লারের <a href="https://www.statmania.info/2020/09/euler2.html">অভেদ দিয়ে প্রকাশ করি</a> <span class="math inline">\(e^{i \pi}\)</span> দিয়ে। তাহলে ১৮০ এর অর্ধেকটা মানে ৯০ ডিগ্রি বা <span class="math inline">\(i\)</span> অবস্থানে যেতে ফর্মুলাটা হবে <span class="math inline">\(e^{i \frac{\pi}{2}}\)</span>।&nbsp;</p>
+<p>একে আরেকভাবেও চিন্তা করা যায়। ১ থেকে (-১) এ যেতে আমরা ১৮০ ডিগ্রি ঘুরি। আর সেটাকে অয়লারের <a href="2020-09-euler2.html">অভেদ দিয়ে প্রকাশ করি</a> <span class="math inline">\(e^{i \pi}\)</span> দিয়ে। তাহলে ১৮০ এর অর্ধেকটা মানে ৯০ ডিগ্রি বা <span class="math inline">\(i\)</span> অবস্থানে যেতে ফর্মুলাটা হবে <span class="math inline">\(e^{i \frac{\pi}{2}}\)</span>।&nbsp;</p>
 <p>এ তো গেল i। কিন্তু i এর পাওয়ারও তো i। সেটার কী হবে? এটা বলছে আমাদেরকে&nbsp;<span class="math inline">\(i \frac{\pi}{2}\)</span> হারের বদলে&nbsp; <span class="math inline">\(i \frac{\pi}{2} \cdot i\)</span> হারে বৃদ্ধি করতে হবে। ঠিক যেমন <span class="math inline">\(3^4\)</span> মানে আমাদেরকে <span class="math inline">\(\ln(3)\)</span> হারে বৃদ্ধি করে তার আবার চারগুণ যেতে হবে। মানে নতুন হার হয়েছিল <span class="math inline">\(\ln(3) \times 4\)</span>।</p>
 <p>&nbsp;</p>
 <p>তার মানে বৃদ্ধির হার হবে <span class="math inline">\(i \frac{\pi}{2} \cdot i = \frac{\pi}{2} \cdot -1 = - \frac{\pi}{2}\)</span>&nbsp;</p>
@@ -475,10 +475,10 @@ exp(-pi/2)</code></pre>
 <p><strong>আরও পড়ুন&nbsp;</strong></p>
 </div>
 <div style="text-align: left;">
-<p><a href="https://www.statmania.info/2020/09/euler2.html">অয়লার অভেদ এত মজা</a></p>
+<p><a href="2020-09-euler2.html">অয়লার অভেদ এত মজা</a></p>
 </div>
 <div style="text-align: left;">
-<p><a href="https://www.statmania.info/2016/09/5-numbers-relation.html">সবচেয়ে সুন্দর সমীকরণ</a> <a href="https://www.statmania.info/2019/07/imaginary-number.html">কাল্পনিক সংখ্যা কি কাল্পনিক?</a></p>
+<p><a href="2016-09-5-numbers-relation.html">সবচেয়ে সুন্দর সমীকরণ</a> <a href="2019-07-imaginary-number.html">কাল্পনিক সংখ্যা কি কাল্পনিক?</a></p>
 </div>
 
 

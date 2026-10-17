@@ -23,7 +23,7 @@ image: ../img/posts/00b370b4c1.jpg
 কাজটা আমরা করব কমান্ড লাইনে। আপনি লিনাক্স ইউজার হলে তো কথাই নেই। না হলেও সমস্যা নেই। WSL ইনস্টল করে নিলেই হলো। [কীভাবে করবেন দেখে নিন এখানে](https://www.wikihow.com/Enable-the-Windows-Subsystem-for-Linux)।
 
 **আরও পড়ুন**
-☛ [লিনাক্স কমান্ড লাইন: হাতেখড়ি](https://www.statmania.info/2019/06/linux-intro.html)
+☛ [লিনাক্স কমান্ড লাইন: হাতেখড়ি](2019-06-linux-intro.html)
 
 এবার তাহলে টার্মিনাল বা WSL ওপেন করুন। এখানের কাজগুলো করতে হলে আমাদের একটি বিখ্যাত প্যাকেজ লাগবে। নাম ImageMagick। এটা [ইনস্টল করে](https://www.tecmint.com/install-imagemagick-on-debian-ubuntu/) নিন তাহলে। লিঙ্কে বিস্তারিত বলা আছে। অত ঝামেলায় যেতে না চাইলে নীচের কোডটা রান করে দেখুন।
 
@@ -33,7 +33,7 @@ sudo apt-get install imagemagick
 
 **১। পিডিএফ জোড়া দিতে**
 
-মনে করুন, আপনার [ওয়ার্কিং ডিরেক্টরিতে](https://www.statmania.info/2019/06/linux-intro.html) অনেকগুলো পিডিএফ ফাইল আছে। এর মধ্যে কয়েক্টিকে আপনি জোড়া দিতে চাচ্ছেন। ধরুন আমরা pdf1.pdf, pdf2.pdf, pdf3.pdf এই তিনটি ফাইলকে জোড়া দিয়ে merged.pdf নামে একটি ফাইল বানাব।
+মনে করুন, আপনার [ওয়ার্কিং ডিরেক্টরিতে](2019-06-linux-intro.html) অনেকগুলো পিডিএফ ফাইল আছে। এর মধ্যে কয়েক্টিকে আপনি জোড়া দিতে চাচ্ছেন। ধরুন আমরা pdf1.pdf, pdf2.pdf, pdf3.pdf এই তিনটি ফাইলকে জোড়া দিয়ে merged.pdf নামে একটি ফাইল বানাব।
 
 ```bash
 convert pdf1.pdf pdf2.pdf merged.pdf

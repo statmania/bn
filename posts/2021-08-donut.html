@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>এই প্লটটাও R-এই বানিয়েছি।</p>
 <p>এমনিতে R-এর ggplot2 প্যাকেজে পাই চার্ট বানানোর জন্যে কোনো ফাংশন নেই। তবে একটু ঘুরিয়ে চিন্তা করলেই বোঝা যায়, পাই চার্ট আসলে এক ধরনের বার চার্টই। তবে বারগুলো খাড়াভাবে না থেকে কৌণিকভাবে অবস্থান করছে। একটা যেখানে শেষ আরেকটা সেখানে শুরু।&nbsp;</p>
 <p>ওপরের ডোনাট চার্টটির দিকেই দেখুন। এরিয়াগুলোকে চাইলেই বার হিসেবে কল্পনা করতে পারেন। অতএব, ডোনাট চার্টের কায়দা কানুন বুঝতে হলে বার চার্ট বানানোর নিয়ম জানতে হবে। একদম চিন্তা নেই, অনেকগুলো পোস্টে সেটা আমরা ব্যাখ্যা করেছি।&nbsp;</p>
-<p>☛&nbsp;<a href="https://www.statmania.info/2019/04/r-ggplot2-rcolorbrewer.html">বার প্লট বানানোর কায়দা কানুন</a></p>
+<p>☛&nbsp;<a href="2019-04-r-ggplot2-rcolorbrewer.html">বার প্লট বানানোর কায়দা কানুন</a></p>
 <p>তাহলে বানিয়ে ফেলি। ও, আগে কিছু ডেটা বানিয়ে নেই। টেবিলটা <a href="https://en.wikipedia.org/wiki/United_States">উইকিপিডিয়া</a> থেকে নেওয়া।&nbsp;</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>us_races <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Race =</span> <span class="fu">c</span>(<span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Multiracial"</span>, <span class="st">"Asian"</span>, <span class="st">"Others"</span>), </span>
@@ -404,9 +404,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>xlim দিয়ে ডোনাটের পুরুত্ব ঠিক করা হয়েছে। এর ওপর নির্ভর করে পাইয়ের ভেতরের ছিদ্র ছোট-বড় হবে।</li>
 <li>মূলত coord_polar দিয়ে বারগুলোকে কৌণিক রূপ দেওয়া হয়েছে।</li>
 <li>theme_void দিয়ে অপ্রয়োজনীয় ব্যাকগ্রাউন্ড রিমুভ করা হয়েছে।&nbsp;</li>
-<li>geom_text সম্পর্কে আরও জানতে এই <a href="https://www.statmania.info/2019/10/new-scatter.html">লেখাটি দেখুন</a>।&nbsp;</li>
-<li>বাকি জিনিসগুলো বিভিন্ন লেখায় আগেই বলেছি। দেখতে চাইলে <a href="https://www.statmania.info/search/label/plot?max-results=12">দেখে নিন</a>।</li>
-<li>প্লট কালারিং করার <a href="https://www.statmania.info/2018/07/r-colors.html">নানান উপায় দেখুন এখানে</a>।</li>
+<li>geom_text সম্পর্কে আরও জানতে এই <a href="2019-10-new-scatter.html">লেখাটি দেখুন</a>।&nbsp;</li>
+<li>বাকি জিনিসগুলো বিভিন্ন লেখায় আগেই বলেছি। দেখতে চাইলে <a href="../tags.html#tag=plot">দেখে নিন</a>।</li>
+<li>প্লট কালারিং করার <a href="2018-07-r-colors.html">নানান উপায় দেখুন এখানে</a>।</li>
 </ul>
 <p>আজ এ পর্যন্তই।</p>
 

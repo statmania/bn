@@ -59,7 +59,7 @@ echo "10.11 + 2.12" | bc
 ```
 
 **আরও পড়ুন**
-[লিনাক্স কমান্ড লাইন: হাতে খড়ি](https://www.statmania.info/2019/06/linux-intro.html)
+[লিনাক্স কমান্ড লাইন: হাতে খড়ি](2019-06-linux-intro.html)
 
 চাইলে কত ঘর পর্যন্ত দশমিক চান সেটা বলে দিতে পারবেন। এজন্য scale বলে দিতে হবে।
 
@@ -88,13 +88,13 @@ jot 5 101
 আরেকটু কাজের কাজ করি। ধরুন আমাদের May1, May2, May3 ইত্যাদি এক সারি আউটপুট লাগবে। বারবার এটা না লিখে এটা আমরা jot দিয়ে বানিয়ে নিতে পারি। হ্যাঁ, এখানে আমাদের bash loop কমান্ড লাগবে।
 
 আরও পড়ুন
-[লিনাক্স কমান্ড লাইন: সহজ লুপ](https://www.statmania.info/2020/05/linux-loop-easy.html)
+[লিনাক্স কমান্ড লাইন: সহজ লুপ](2020-05-linux-loop-easy.html)
 
 ```bash
 for i in `jot 31 1`; do echo May $i; done
 ```
 
-চাইলে এই আউটপুট একটি ফাইলেও [সেভও করে নিতে](https://www.statmania.info/2019/06/linux-intro.html) পারেন।
+চাইলে এই আউটপুট একটি ফাইলেও [সেভও করে নিতে](2019-06-linux-intro.html) পারেন।
 
 ```bash
 for i in `jot 31 1`; do echo May $i; done > may.txt

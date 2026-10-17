@@ -22,11 +22,11 @@ image: ../img/posts/0b54b4981e.jpg
 :::
 
 **আরও পড়ুন**
-☛ [কেন লিনাক্স ব্যবহার করবেন?](https://www.statmania.info/2019/05/why-linux-is-great.html)
+☛ [কেন লিনাক্স ব্যবহার করবেন?](2019-05-why-linux-is-great.html)
 
 ১। **pwd**
 
-এই কমান্ড আপনাকে বলবে, এই মূহূর্তে আপনি কোন ডিরেক্টরিতে আছেন। [R](https://www.statmania.info/search/label/Linux?max-results=9)-এ আমরা এটা জানি getwd() কমান্ড দিয়ে। pwd হলো present working directory এর সংক্ষিপ্ত রূপ।
+এই কমান্ড আপনাকে বলবে, এই মূহূর্তে আপনি কোন ডিরেক্টরিতে আছেন। [R](../tags.html#tag=linux)-এ আমরা এটা জানি getwd() কমান্ড দিয়ে। pwd হলো present working directory এর সংক্ষিপ্ত রূপ।
 
 ২। **ls**
 
@@ -184,7 +184,7 @@ mv sum.txt sum.docx
 
 আপাতত আমরা এখানেই থামছি। আরও অ্যাডভান্সড লেভেলে যাবার আগে নীচের নিবন্ধগুলো পড়ে নিতে পারেন।
 
- ☛ [লিনাক্স ও ডেটা সায়েন্স: একটি সরল টেক্সট মাইনিং](https://www.statmania.info/2019/05/linux-text-mining.html)
- ☛ [লিনাক্স ও ডেটা সায়েন্স: tr কমান্ডের কারিশমা](https://www.statmania.info/2019/05/linux-tr.html)
- ☛ [লিনাক্স টেক্সট প্রসেসিং: নির্দিষ্ট প্যাটার্নের পর সব ডিলিট করুন সহজে](https://www.statmania.info/2019/06/linux-text-rm.html)
+ ☛ [লিনাক্স ও ডেটা সায়েন্স: একটি সরল টেক্সট মাইনিং](2019-05-linux-text-mining.html)
+ ☛ [লিনাক্স ও ডেটা সায়েন্স: tr কমান্ডের কারিশমা](2019-05-linux-tr.html)
+ ☛ [লিনাক্স টেক্সট প্রসেসিং: নির্দিষ্ট প্যাটার্নের পর সব ডিলিট করুন সহজে](2019-06-linux-text-rm.html)
 :::

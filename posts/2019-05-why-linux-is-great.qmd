@@ -90,13 +90,13 @@ image: ../img/posts/61ff0c8451.png
 
 এতক্ষণ ধরে বকবক করেও আমি শুধুমাত্র লিনাক্সের বাহ্যিক দিকটাই একটুখানি তুলে ধরেছি। ভেতরের কথাবার্তা নিয়ে, একজন বিগিনার হিসেবে লিনাক্সের কোন অপারেটিং সিস্টেমটি ব্যাবহার করতে পারেন, কীভাবে ইনস্টল করবেন, সেসব বিস্তারিত লিখবো অন্য একটি লিখায়। ভালো থাকুন। Happy Computing!
 
-ডেটা সায়েন্সে লিনাক্স কীভাবে কাজে লাগতে পারে জানতে চোখ রাখুন [এখানে](https://www.statmania.info/search/label/Linux?max-results=20)।
+ডেটা সায়েন্সে লিনাক্স কীভাবে কাজে লাগতে পারে জানতে চোখ রাখুন [এখানে](../tags.html#tag=linux)।
 **আরও পড়ুন**
 
 ::: {style="background-color: white; line-height: 1.2; margin: 0px 0px 3px; padding: 0px; text-align: left; transition: all 0.2s ease-in-out 0s;"}
-☛ [লিনাক্স ও ডেটা সায়েন্স: একটি সরল টেক্সট মাইনিং](https://www.statmania.info/2019/05/linux-text-mining.html)
+☛ [লিনাক্স ও ডেটা সায়েন্স: একটি সরল টেক্সট মাইনিং](2019-05-linux-text-mining.html)
 :::
 
-☛ [লিনাক্স ও ডেটা সায়েন্স: tr কমান্ডের কারিশমা](https://www.statmania.info/2019/05/linux-tr.html)
+☛ [লিনাক্স ও ডেটা সায়েন্স: tr কমান্ডের কারিশমা](2019-05-linux-tr.html)
 
 :::

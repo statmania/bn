@@ -54,5 +54,5 @@ e দ্বারা বোঝায় সূচকীয় বৃদ্ধি। �
 এ কারণেই আমরা ১ থেকে শুরু করে (-১) এ গিয়ে থেমেছি। 
  
 **আরও পড়ুন **
-[গণিতের সবচেয়ে সুন্দর সমীকরণ](%20https://www.statmania.info/2016/09/5-numbers-relation.html)
-[কাল্পনিক সংখ্যা কি কাল্পনিক?](https://www.statmania.info/2019/07/imaginary-number.html)
+[গণিতের সবচেয়ে সুন্দর সমীকরণ](2016-09-5-numbers-relation.html)
+[কাল্পনিক সংখ্যা কি কাল্পনিক?](2019-07-imaginary-number.html)

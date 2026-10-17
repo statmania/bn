@@ -48,9 +48,9 @@ us_races %>% ggplot(aes(Race, Percentage, fill = Race))+
 
 এবারে *RColorBrewer* প্যাকেজ দিয়ে বারের কালারগুলো সাজিয়ে নেই। না করলেও ক্ষতি নেই। পাশাপাশি বারের মধ্যেই প্রতিটি বারের সাথে সংশ্লিষ্ট সংখ্যাগুলো দেখিয়ে দেই। 
 
-☛ [RColorBrewer যেভাবে প্লটকে সুন্দর করে](https://www.statmania.info/2019/04/r-ggplot2-rcolorbrewer.html)
+☛ [RColorBrewer যেভাবে প্লটকে সুন্দর করে](2019-04-r-ggplot2-rcolorbrewer.html)
 
-☛ [প্লট লেবেলিং করবেন যেভাবে](https://www.statmania.info/2019/10/new-scatter.html)
+☛ [প্লট লেবেলিং করবেন যেভাবে](2019-10-new-scatter.html)
 
 ```r
 us_races %>% ggplot(aes(Race, Percentage, fill = Race))+
@@ -160,7 +160,7 @@ us_races %>% ggplot(aes(x="", y = Percentage, fill = Race))+
 
 চাইলে তো আরও কত কিছুই করা যায়। করার আগে চিন্তা করতে হবে সেটা কতটা অর্থবহ। 
 
-পাই চার্ট ভাল না লাগলে যদি ডোনাট চার্ট আঁকতে চান, [সেটাও করতে পারেন](https://www.statmania.info/2021/08/donut.html)। 
+পাই চার্ট ভাল না লাগলে যদি ডোনাট চার্ট আঁকতে চান, [সেটাও করতে পারেন](2021-08-donut.html)। 
 
 ::: {.separator style="clear: both; text-align: center;"}
 ![](../img/posts/cdc6413279.png)

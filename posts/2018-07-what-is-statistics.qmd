@@ -12,7 +12,7 @@ image: ../img/posts/a5509182be.jpg
 
 ::: {dir="ltr" style="text-align: left;" trbidi="on"}
 ::: {.separator style="clear: both; text-align: justify;"}
-*\[লিখেছেনঃ [ড. রহমতুল্লাহ ইমন](http://www.statmania.info/search/label/rimon?max-results=10)\]* 
+*\[লিখেছেনঃ [ড. রহমতুল্লাহ ইমন](../authors/stat-mania.html)\]* 
 :::
 
 ::: {.separator style="clear: both; text-align: justify;"}

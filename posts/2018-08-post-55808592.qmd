@@ -19,7 +19,7 @@ draft: true
   -------------------------------------------------------------------------------------------------------------------
 
 **আরও পড়ুন**
-[রিগ্রেশন লাইন কীভাবে আঁকবেন? ](http://www.statmania.info/2018/07/r-regression-line.html)
+[রিগ্রেশন লাইন কীভাবে আঁকবেন? ](2018-07-r-regression-line.html)
 
 http://blog.minitab.com/blog/adventures-in-statistics-2/linear-or-nonlinear-regression-that-is-the-question
 
