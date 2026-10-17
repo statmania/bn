@@ -1,0 +1,63 @@
+---
+title: R প্রোগ্রামিং থেকেই সহজে ইমেইল পাঠান
+date: '2018-05-30'
+description: প্রোগ্রামিং করে ইমেইল
+categories:
+- R
+tags:
+- r
+- package
+- ds
+author: আব্দুল্যাহ আদিল মাহমুদ
+image: ../img/posts/cea949b9d1.jpg
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+সকল কাজের মোক্ষম কাজী R প্রোগ্রামিং ল্যাঙ্গুয়েজ। ইমেইল করার জন্যেও এতে রয়েছে দারুণ একটি প্যাকেজ। নাম: [mailR](https://cran.r-project.org/web/packages/mailR/index.html)।
+
+::: {.separator style="clear: both; text-align: center;"}
+![](../img/posts/cea949b9d1.jpg)
+:::
+
+::: {.separator style="clear: both; text-align: center;"}
+
+:::
+
+শুরুতে আপনাকে R এর প্যাকেজটি ইনস্টল ও লোড করে নিতে হবে।
+
+```r
+install.packages("mailR")
+```
+
+এই প্যাকজেটি আবার R এর আরেকটি প্যাকেজ rjava এর ওপর নির্ভর করে। তবে সেটা আপনাকে আলাদা করে ইনস্টল করা লাগবে না। R নিজেই করে নিবে। তবে আপনার পিসিতে জাভা ইনস্টল করা থাকতে হবে। না থাকলে [এখান থেকে ডাউনলোড](https://java.com/en/download/manual.jsp) করে ইনস্টল করে নিন। এটা একবারই করতে হবে।
+আপনার কম্পিউটার 64 bit হলে জাভার ৬৪ বিটের ভার্সন নিবেন কিন্তু।
+
+এবার library(mailR) কোড রান করে প্যাকেজটি লোড করুন।
+এবার নীচের কোডখানা নিজের মতো করে সাজিয়ে পাঠিয়ে ফেলুন আপনার ইমেইল।
+
+::: {.codebox}
+```r
+send.mail(from="yourmail@mail.com",
+to="sendto@mail.com",
+subject="R Email",
+body="Write what you want to send",
+html=T,
+smtp=list(host.name = "smtp.gmail.com",
+port = 465,
+user.name = "yourmail@mail.com",
+passwd = "password",
+ssl = T),
+authenticate=T,
+attach.files="C:\\file_path")
+```
+:::
+
+এখানে নিজের মতো করে সব কিছু ঠিক করে দিয়ে কোডটি রান করালেই কেল্লা ফতে!
+
+☛ ফাইল অ্যাটাচ করতে হলে attach.files অংশে ফাইলের লোকেশন লিখতে হবে।
+
+☛ গুগোলের জিমেইল থেকে ইমেইল পাঠাতে গেলে সরাসরি কাজ করবে না। সেক্ষেত্রে গুগোল আপনাকে একটি ইমেইল পাঠিয়ে বাইরের অ্যাপ থেকে ইমেইল করার অনুমতি চাইবে। অনুমতি দিলেই এর পর থেকে ইমেইল যাবে। তবে এ কারণে নিরাপত্তায় কোনো সমস্যা হলে তার দায় আপনাকেই নিতে হবে!
+
+**আরও পড়ুন **
+☛ [R প্রোগ্রামিং মহান কেন](https://www.statmania.info/2018/05/r-for-data-science.html)? 
+:::

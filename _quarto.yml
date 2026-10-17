@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: .
+  pre-render: _extensions/blogkit/build_site_data.py
+  resources:
+    - img/placeholder.svg      # used by the homepage listing for posts without an image
+  render:
+    - "*.qmd"
+    - "posts/*.qmd"
+    - "authors/*.qmd"
+
+website:
+  title: "Stat Mania"
+  description: "Stat Mania: statistics, math, R and Linux in Bangla."
+  navbar:
+    logo: img/logo.svg   # sample logo: replace this file with your own
+    left:
+      - href: index.qmd
+        text: Home
+      - href: tags.qmd
+        text: Tags
+      - href: categories.qmd
+        text: Categories
+    right:
+      - about.qmd
+
+  page-footer:                  # shown on every page; styled by the extension
+    left: "© 2026 Stat Mania"
+    center:
+      - text: "Tags"
+        href: tags.qmd
+      - text: "Categories"
+        href: categories.qmd
+      - text: "About"
+        href: about.qmd
+    right:
+      - text: "RSS"
+        href: index.xml
+
+format:
+  blogkit-html: default
+
+# Optional Blogkit settings (see README)
+blogkit:
+  per-page: 10      # pagination on tag and author pages
+  related: 5        # related posts under each post

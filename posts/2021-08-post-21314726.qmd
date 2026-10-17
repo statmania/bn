@@ -1,0 +1,16 @@
+---
+title: 'R প্রোগ্রামিং: প্লট কালার করার সেরা কৌশল'
+date: '2021-08-30'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+colfunc \<- colorRampPalette(c("\#ff3399", "\#0099ff"))
+
+us\_races %\>% ggplot(aes(Race, Percentage, fill = Race))+
+
+  geom\_bar(stat="identity", width = 0.6)+
+
+  scale\_fill\_manual(values = colfunc(5))

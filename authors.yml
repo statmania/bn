@@ -1,0 +1,26 @@
+abdullah-adil-mahmud:
+  name: আব্দুল্যাহ আদিল মাহমুদ
+  aliases: []
+  tagline: Stat Mania
+  bio: >-
+    Stat Mania এর প্রতিষ্ঠাতা ও প্রধান লেখক।
+  links:
+    - {text: Website, href: "http://www.thinkermahmud.com"}
+emon:
+  name: Emon
+  aliases: []
+  tagline: Stat Mania contributor
+  bio: >-
+    Stat Mania এর অতিথি লেখক।
+stat-mania:
+  name: Stat Mania
+  aliases: []
+  tagline: Stat Mania team
+  bio: >-
+    Stat Mania এর সম্পাদকীয় ও দলীয় লেখা।
+tuhin-rana:
+  name: Tuhin Rana
+  aliases: []
+  tagline: Stat Mania contributor
+  bio: >-
+    Stat Mania এর অতিথি লেখক।

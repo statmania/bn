@@ -1,0 +1,12 @@
+---
+title: 'R প্রোগ্রামিং: সবচেয়ে গুরুত্বপূর্ণ বিষয়'
+date: '2018-07-18'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+
+:::

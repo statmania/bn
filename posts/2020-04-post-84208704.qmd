@@ -1,0 +1,12 @@
+---
+title: বায়োইনফরম্যাটিক্স ও জেনেটিক্স
+date: '2020-04-18'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+<https://www.bioinformatics.org/tutorial/topics.html>
+:::

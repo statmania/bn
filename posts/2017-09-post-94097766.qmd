@@ -1,0 +1,18 @@
+---
+title: সম্ভাবনার দুই মেরু
+date: '2017-09-17'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+সম্ভাবনা তত্ত্ব। আধুনিক বিজ্ঞান ও গবেষণার অন্যতম প্রধান অনুষঙ্গ। অনিশ্চিত অবস্থায় উপযোগী সিদ্ধান্ত নিতে দারুণ কার্যকর এই জাদুকরী তত্ত্ব। আধুনিক পদাররথবিজ্ঞানের দুই প্রধান স্তম্ভের একটি- কোয়ান্টাম মেকানিক্স তো এই তত্ত্বের ওপরই দাঁড়িয়ে আছে। তবে সম্ভাবনার বিশারদারা সম্ভাবনাকে একই চোখে দেখেন না। সম্ভাবনার ব্যাখ্যা নিয়ে পরিসংখ্যানবিদরা দুটো দলে বিভক্ত। কে, কী ভাবছেন, আর কেনই বা ভাবছেন সেটাই আজ আম্রা জানার চেষ্টা করব।
+
+source:
+
+1. https://stats.stackexchange.com/questions/22/bayesian-and-frequentist-reasoning-in-plain-english
+
+2. https://www.quora.com/For-a-non-expert-what-is-the-difference-between-Bayesian-and-frequentist-approaches/answer/Jason-Eisner
+:::

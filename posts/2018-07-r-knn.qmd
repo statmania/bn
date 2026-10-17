@@ -1,0 +1,12 @@
+---
+title: 'R প্রোগ্রামিং এ মেশিন লার্নিং এর সূচনা: KNN অ্যালগোরিদম'
+date: '2018-07-27'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+https://www.analyticsvidhya.com/blog/2018/03/introduction-k-neighbours-algorithm-clustering/
+:::

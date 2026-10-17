@@ -1,0 +1,12 @@
+---
+title: Untitled
+date: '2017-10-06'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+একাডেমিক প্রয়োজোনে জিআইএস (Geographic Information System) শেখা দরকার ছিল। জিওগ্রাফি, জিওলোজি ও ডিজেস্টার সায়েন্স ডিপার্টমেন্টের বহু স্যারের কাছে ধর্ণা দিয়েছিলাম। উচ্চ হাদিয়া দিতে অপারগ হওয়ায়। 
+:::

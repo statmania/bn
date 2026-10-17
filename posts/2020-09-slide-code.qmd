@@ -1,0 +1,107 @@
+---
+title: কোড লিখে স্লাইড বানাই
+date: '2020-09-09'
+description: প্রেজেন্টেশন স্লাইড
+categories:
+- R
+tags:
+- r
+- git
+- linux
+- tools
+author: আব্দুল্যাহ আদিল মাহমুদ
+image: ../img/posts/77c91796eb.jpg
+---
+
+অনলাইন ক্লাসের জন্য প্রতিদিন প্রেজেন্টেশন স্লাইড বানাতে হয়। MS পাওয়ারপয়েন্ট স্লাইডকে বিদায় জানিয়েছি এক বছর আগে। এখন স্লাইড বানাই কোড লিখে লিখে। ব্যবহার করি এক গাদা ল্যাংগুয়েজ। অন্তত সাতখানা। R, Markdown, Javascript, HTML, CSS, Tex (Latex) ও bash। প্রতিটা ল্যাংগুয়েজই অসাধারণ। মিলেমিশে টিমওয়ার্ক করে আমার মনের মতো স্লাইড বানিয়ে দেয়।
+
+ 
+
+::: {.separator style="clear: both; text-align: center;"}
+![](../img/posts/77c91796eb.jpg)
+:::
+
+::: {dir="auto"}
+::: {.j83agx80 .cbu4d94t .ew0dbk1b .irj2b8pg}
+::: {.qzhwtbm6 .knvmm38d}
+::: {.kvgmc6g5 .cxmmr5t8 .oygrvhab .hcukyx3x .c1et5uql .ii04i59q}
+::: {dir="auto" style="text-align: start;"}
+তা কোনটা কেন ইউজ করি?
+:::
+
+::: {dir="auto" style="text-align: start;"}
+R: বহুমুখী কাজের জন্য। প্রথমত Rstudio এর মাধ্যমে স্লাইড ফাইলগুলো এর মধ্যেই তৈরি করি। তবে R এর মূল অবদান আরও বড়। আমার স্লাইডে মাঝেমধ্যেই গ্রাফ বা টেবিল ও সেগুলোর হিসাব-নিকাশ থাকে। এই কাজগুলো R অটো করে দেয়। প্লট বা গ্রাফ এঁকে সেটাকে পিসিতে সেভ করে তারপর ইনসার্ট করার কোনো ঝামেলা নেই। ডেটা আর কোড লিখে দেব। গ্রাফ বা রেজাল্ট অটো চলে আসবে। ইডিট করা অনেক flexible। কোনো ভুল হলে নতুন করে গ্রাফ বানিয়ে আবারও ইনসার্ট করা- সেই দিন এখন অতীত।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+ 
+:::
+
+::: {dir="auto" style="text-align: start;"}
+Markdown মূলত R এ তৈরি ফাইলকে সুন্দর করে পাবলিশ করে দেয়।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+এটাকে MS Word এর বিকল্প ভাবতে পারেন। Rstudio তে .Rmd ফাইলগুলোই R এর মধ্যে Markdown implement করিয়ে দেয়।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+সাথে revealjs প্লাগইন ফাইলটাকে সুন্দর স্লাইড আকারে পাবলিশ করতে হেল্প করে। revealjs আবার Javascript দিয়ে করা। js হলো Javascript এর abbreviation।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+ 
+:::
+
+::: {dir="auto" style="text-align: start;"}
+CSS: স্লাইডের ওভারঅল থিম নির্ভর করে সরল এই ল্যাঙ্গুয়েজটার ওপর। styles.css নামে ফাইলটা প্রোজেক্ট ফোল্ডারে রেখে দিলেই কেল্লা ফতে!
+:::
+
+::: {dir="auto" style="text-align: start;"}
+ 
+:::
+
+::: {dir="auto" style="text-align: start;"}
+আর HTML ছাড়া তো css ও js ইমপ্লিমেন্ট করা যাবে না। তাই তাকেও রাখতে হলো। বিশেষ করে দুই বা বহু কলামের কন্টেন্ট জাভাস্ক্রিপ্ট দিয়ে বানাতে গেলে HTMLও লাগে। আবার ক্লিক করলে দেখা যাবে এমন js script এর জন্য দরকার html।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+ 
+:::
+
+::: {dir="auto" style="text-align: start;"}
+Javascript এর ব্যবহার অলরেডি বলাই হয়ে গেছে। revealjs প্লাগইন দিয়ে Rmd ফাইলকে স্লাইড আকারে পাবলিশ করতে শুরুতেই js লাগছে। R এর মধ্যে এটা আছে revealjs package হিসেবে। আরও বেশ কিছু কাজে দারুণ পাওয়ারপুল js ভাষাটা ইউজ করা হয়, যার কিছু উদাহরণ অলরেডি বলেছি।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+ 
+:::
+
+::: {dir="auto" style="text-align: start;"}
+Tex (উচ্চারণ টেক) এর প্রশংসা তো করে শেষ করাই যাবে না। গণিতের যত কঠিন সমীকরণই দেবেন Tex সেটা পাব্লিশ করে দেবেই। Tex এর জনপ্রিয় implementation লেটেক (Latex) ইউজ করি এ কাজের জন্য।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+ 
+:::
+
+::: {dir="auto" style="text-align: start;"}
+bash মূলত একটি লিনাক্স শেল বা কমান্ড লাইন। এটা ইউজ করি মূলত Git ও Github এর জন্য। কাজ করা ফাইলগুলো নিয়মিত ট্র্যাক করি এর মাধ্যমে। একে বলা হয় ভার্সন কন্ট্রোল। এর প্রয়োজন ২/১ কথায় বলা সম্ভব নয়।
+:::
+
+::: {dir="auto" style="text-align: start;"}
+ 
+:::
+
+::: {dir="auto" style="text-align: start;"}
+এতগুলো ল্যাংগুয়েজ ভালোই টিমওয়ার্ক করে যাচ্ছে। কোড করে কাজ করায় মজাই আলাদা ![❤](../img/posts/5efa099bb0.png)
+:::
+
+::: {dir="auto" style="text-align: start;"}
+কোড দেখতে চাইলে [এখানটায় ঘুরে আসুন](https://github.com/mahmudstat/lectures)।
+:::
+:::
+:::
+:::
+
+:::

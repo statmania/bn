@@ -1,0 +1,13 @@
+---
+title: 'রিগ্রেশন মডেল: $R^2$ এর ব্যাখ্যা কী?'
+date: '2018-08-01'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+
+সূত্রঃ [Statistics by Jim](https://nl.hideproxy.me/go.php?u=hqZulNEthsvdNwnOLfFxWykE984vQmecxO5h77nu%2FMDw2NAfBYfJA2IZNOxU3GbcLMWpECY5mQOFuSep2BxeuL4%3D&b=5)
+:::

@@ -1,0 +1,12 @@
+---
+title: মাহমুদ-২
+date: '2016-09-27'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+
+:::

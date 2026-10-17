@@ -1,0 +1,13 @@
+---
+title: বার প্লট এমন দারুণ তথ্যও দিতে পারে!
+date: '2021-07-29'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+image: ../img/posts/3e98646864.png
+draft: true
+---
+
+::: {.separator style="clear: both; text-align: center;"}
+![](../img/posts/3e98646864.png)
+:::

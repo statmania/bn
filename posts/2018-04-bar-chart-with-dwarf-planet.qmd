@@ -1,0 +1,12 @@
+---
+title: Bar chart with dwarf planet characteristics
+date: '2018-04-15'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+Bar chart with dwarf planet characteristics
+:::

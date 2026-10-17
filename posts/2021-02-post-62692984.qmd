@@ -1,0 +1,10 @@
+---
+title: R Markdown
+date: '2021-02-26'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+

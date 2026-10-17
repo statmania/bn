@@ -1,0 +1,12 @@
+---
+title: 'R প্রোগ্রামিং: csv ফাইল মার্জ করতে'
+date: '2019-07-17'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+<https://stackoverflow.com/questions/43858448/how-to-load-and-merge-multiple-csv-files-in-r/43858605>
+:::

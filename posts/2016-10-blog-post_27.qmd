@@ -1,0 +1,16 @@
+---
+title: গড় বর্গ ত্রুটিঃ পরিচয় ও উদাহরণ
+date: '2016-10-28'
+categories:
+- General
+tags:
+- terms
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+
+সূত্রঃ
+১। http://www.statisticshowto.com/mean-squared-error/
+:::

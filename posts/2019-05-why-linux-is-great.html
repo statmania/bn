@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Tuhin Rana">
+<meta name="dcterms.date" content="2019-05-24">
+<meta name="description" content="লিনাক্স অপারেটিং সিস্টেম">
+
+<title>‘ল’ তে লিনাক্স – Stat Mania</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-ccafe2c99a4564d55934ca8539ca9f46.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1f7249002a96980cd454805216f9e3b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-de4fa3b7647c5fefd9d59d6b8dfc486f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../site_libs/quarto-contrib/quarto-project/blogkit/styles.css">
+</head>
+
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/logo.svg" alt="" class="navbar-logo light-content">
+    <img src="../img/logo.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Stat Mania</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tags.html"> 
+<span class="menu-text">Tags</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../categories.html"> 
+<span class="menu-text">Categories</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">‘ল’ তে লিনাক্স</h1>
+                  <div>
+        <div class="description">
+          লিনাক্স অপারেটিং সিস্টেম
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Linux</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Tuhin Rana </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">May 24, 2019</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<div dir="ltr" style="text-align: left;" data-trbidi="on">
+<p>কম্পিউটার, মোবাইলফোন, স্মার্টওয়াচ বা এই ধরনের ডিভাইসগুলো আমরা হরহামেশাই ইউজ করে থাকি। কিন্তু কখনো কি খেয়াল করেছেন এগুলো চলে কীভাবে? আসলে আমাদের এই নিত্যপ্রয়োজনীয় ডিভাইসগুলো নিতান্তই জড়বস্তু। যখন এই জড়বস্তুগুলোর মাঝে প্রাণের সঞ্চার করা হয় তখনি এই ডিভাইসগুলো আমাদের নিত্যদিনের সঙ্গী হয়ে দাড়ায়। “প্রাণের সঞ্চার” কথাটা আপনাদের কাছে অদ্ভুত লাগতে পারে, আমি আসলে অপারেটিং সিস্টেমের কথাই বলছি।</p>
+<div class="separator" style="clear: both; text-align: center;">
+<p><img src="../img/posts/61ff0c8451.png" class="img-fluid"></p>
+</div>
+<p>অপারেটিং সিস্টেম হচ্ছে এমন একটি জিনিস যা এই জড়বস্তুগুলোকে ব্যাবহারযোগ্য করে তোলে। আমাদের দেশের অধিকাংশ মানুষই তাদের কম্পিউটারে ‘উইন্ডোজ’ ব্যাবহার করেন অপারেটিং সিস্টেম হিসেবে। উইন্ডজের বিকল্প কিছুর অস্তিত্ব যে আছে, তা অনেকেই জানেন না। হ্যা, বলছি লিনাক্সের কথা।</p>
+<p>কম্পিউটার ব্যাবহারকারীগণের মধ্যে বিরাট একটা অংশ, ‘লিনাক্স’ শব্দটাই হয়তো শোনেননি। কেউ কেউ শুনেছেন কিন্তু ইহা আসলে কি জিনিস তা জানেন না। কেউ কেউ লিনাক্স শুনলেই মনে করেন ’উবুন্টু’র কথা। আসলে লিনাক্স মানে উবুন্টু না, উবুন্টু লিনাক্সের একটা অপারেটিং সিস্টেম মাত্র! (এরকম আরও অন্তত ৫৫০ টি অপারেটিং সিস্টেম আছে)। আবার অনেকেই মনে করেন, লিনাক্স বোধহয় ব্যাপক কঠিন একটা জিনিস! এটা ব্যাবহার করতে গেলে বিশাল বড় প্রোগ্রামার হতে হবে, কিবোর্ডে খটাখট শব্দ করে কোড লিখা জানতে হবে! আসলে এসবই ভুল ধারণা। লিনাক্স ইউজ করার জন্যে আপনাকে কম্পিউটার সায়েন্টিস্ট হতে হবে না। সাধারণ কম্পিউটার ব্যাবহার কারী হিসেবে কেন আপনারও লিনাক্স ব্যাবহার করা উচিৎ, সেটাই লিখতে বসলাম আজকে।</p>
+<p>আজ থেকে প্রায় ২৮ বছর আগে লিনাস টরভাল্ডস নামের ফিনল্যান্ডের একজন উদাসমনা ভদ্রলোক এই ‘লিনাক্স’ জিনিসটা তৈরী করেছিলেন তার ইউনিভার্সিটির প্রজেক্টটা ঠিকঠাকমতো শেষ করবার জন্যে। যাই হোক, সেই কাহিনি আমরা অন্যদিন শুনবো! সেসময় কম্পিউটারগুলো চলত ‘UNIX’ অপারেটিং সিস্টেম ব্যাবহার করে। এই ইউনিক্সের সোর্সকোড জনসাধারণের জন্যে উন্মুক্ত ছিল না। মানে ডেভেলপাররা কীভাবে এই জিনিসটি বানিয়েছেন তার কোড কেউ জানত না, জানার সুযোগও ছিল না!</p>
+<p>কিন্তু বেচারা লিনাস টরভাল্ডসের ইউনিভার্সিটির প্রজেক্টটার জন্যে সেই কোডের প্রয়োজন ছিল। যেহেতু ইউনিক্সের সোর্সকোড জানার কোনো উপায়ই ছিল না তখন এই আধাপাগল লোকটা নিজের মতকরে একটা অপারেটিং সিস্টেম বানাতে বসে গেলেন! জন্ম হলো লিনাক্সের। নিজের অজান্তেই বানিয়ে ফেললেন দুনিয়া কাঁপানো অপারেটিং সিস্টেম। আরেকটু ক্লিয়ার করে বলি, তিনি মূলত বানিয়েছিলেন লিনাক্স কার্নেল। যা হচ্ছে একটা অপারেটিং সিস্টেমের মূল অংশ যার কাজ হচ্ছে কম্পিউটার নামক জড়বস্তুটির সাথে অপারেটিং সিস্টেম এবং সফটওয়্যারের সংযোগ ঘটানো। আপনি নীচের ছবিটার দিকে তাকালেই বিষয়টা বুঝতে পারবেন আশা করি।</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="../img/posts/2573677e19.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">কার্নেলের কাজ হলো সফটওয়্যার ও হার্ডওয়্যারের মাঝে সংযোগ ঘটানো&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>তিনি লিনাক্স কার্নেল বানানোর পর সেটাকে ওপেনসোর্স করে দিলেন। যাতে যেকেউ চাইলেই সেই লিনাক্স কার্নেলকে মোডিফাই করতে পারে নিজেদের প্রয়োজনে (তার জন্যে অবশ্যই প্রোগামিং জানতে হবে, এমনি এমনি না!)। সেই যে খেলা শুরু হলো, আজ অবধি সে খেলা চলছে তো চলছেই! সবাই নিজেদের প্রয়োজনে নিজের মত করে লিনাক্সকে গড়ে নিচ্ছে! ঠিক এই কারণেই ওপেন সোর্সকোড ব্যাপারটা আমার খুবই প্রিয়! এই ওপেনসোর্স শব্দটার পিছনেও আছে লম্বা ইতিহাস! সেই ইতিহাস এখানে বলাটা ভীষণ অপ্রাসঙ্গিক একটি ব্যাপার হয়ে যাবে! তাই এড়িয়ে যাচ্ছি, পারলে অন্য কোনো লেখায় তুলে ধরার চেষ্টা করবো!</p>
+<p>যাইহোক, আবারো লিনাক্স কার্নেলের কথায়&nbsp;ফেরত আসি। লিনাক্স কার্নেলটাকে বেজ হিসেবে ধরে বানানো শুরু হলো নানা রকম অপারেটিং সিস্টেম। এই লিনাক্স বেজড অপারেটিং সিস্টেমগুলোকে আমরা আদর করে ডাকি “ডিস্ট্রিবিউশন” বা “ডিস্ট্রো”। এখন পর্যন্ত বাজারে অন্তত পাঁচশ অপারেটিং সিস্টেম আছে লিনাক্সের। যার যেমনটা দরকার সে তেমন করেই বানিয়ে নিয়েছে। যেমন হ্যাকার বা সিকিউরিটি বিশেষজ্ঞরা ব্যাবহার করেন “Kali Linux”, “Parrot Os”, “Black Arch”। আবার শিক্ষার্থীদের জন্যে আছে Edubuntu, Endless OS। বিজ্ঞানীরা ব্যবহার করেন ‘Scientific Linux’, ‘Fedora Scientific’ ইঞ্জিনিয়াররা ব্যবহার করেন ‘LinuxCNC’, ‘CAELinux’, জেনেটিক ইঞ্জিনিয়ার কেমিক্যাল ইঞ্জিনিয়াররা ব্যবহার করেন ‘Bio Linux’, ‘Poseidon Linux’ ইত্যাদি!</p>
+<p>আর আমার প্রায় পাঁচ বছরের লিনাক্স অভিজ্ঞতায় প্রায় চল্লিশটির মত অপারেটিং সিস্টেম ব্যাবহার করার সুযোগ হয়েছে। আমার কাছে মনে হয়েছে লিনাক্স মোটেও কঠিন কিছু নয়। এটি সার্বজনীন!</p>
+<p><strong>কেন উইন্ডোজ ছেড়ে লিনাক্স ব্যাবহার করবেন?&nbsp;</strong></p>
+<ul>
+<li><p><strong>সিকিউরিটি:&nbsp;</strong>নাসা, সার্ন, গুগল, ফেসবুক সার্ভার সহ পৃথিবীর সমস্ত গুরুত্বপূর্ণ জায়গাগুলোতে লিনাক্স অপারেটিং সিস্টেম ব্যাবহার করা হয়। ইন্টারনেট দুনিয়ার প্রায় ৯০% সার্ভারে লিনাক্স ব্যাবহার করা হয় এর সিকিউরিটি সুনামের কারণে। লিনাক্স সার্ভারে অ্যাটাক করা প্রায় অসম্ভব একটি কাজ হ্যাকারদের জন্যে। একজন সাধারণ ইউজার হিসেবে সার্ভার সিকিউরিটি নিয়ে হয়ত আপনার মাথাব্যথা নাও থাকতে পারে, কিন্তু আপনি যদি পার্সোনাল কম্পিউটারের সিকিউরিটির কথা চিন্তা করেন সেক্ষেত্রেও লিনাক্স সবার আগে। উইন্ডোজ কম্পিউটারে হরেক রকম অ্যান্টিভাইরাস ইউজ করেন আপনারা ভাইরাস বা ম্যালওয়্যার থেকে বাঁচার জন্যে। অনেক অ্যান্টিভাইরাস কোম্পানি বাজারে তাদের ব্যাবসা টিকিয়ে রাখতে নিজেরাই ভাইরাস আপলোড করে থাকে। অনেক দাম দিয়ে এসব অ্যান্টিভাইরাস কিনতে হয়। সিরিয়াল কী আপডেট করতে হয়। উইন্ডোযে যেখানে এত ঝামেলা সেখানে লিনাক্স একদম দুর্ভেদ্য একটা অপারেটিং সিস্টেম। কোনোরকম অ্যান্টিভাইরাস প্রয়োজন নেই। আমি আজ পর্যন্ত কাউকে বলতে শুনিনি যে তার লিনাক্স কম্পিউটার এ ভাইরাস এ্যটাক হয়েছে!</p></li>
+<li><p><strong>দাম:</strong> উইন্ডোজ এর জেনুইন ভার্সন যদি আপনি ব্যাবহার চান তাহলে আপনাকে প্রায় ১০০ থেকে ২৫০ ডলার গুণতে হবে। কিন্তু লিনাক্স আজীবনের জন্য ফ্রি! হ্যা আপনি ঠিকই পড়েছেন! একটি টাকাও খরচ করতে হবে না আপনাকে।</p></li>
+<li><p><strong>পারফরম্যান্স:&nbsp;</strong>নতুন কম্পিউটার কেনার দুই-তিন মাস পরেই ভীষণ স্লো হয়ে যায় উইন্ডোজ কম্পিউটার। একটা ক্লিক দিয়ে ঘুমিয়ে যাচ্ছেন, ঘুম থেকে উঠে দেখবেন তখনো কাজ হয়নি! মাঝেমধ্যেই আছাড় মেরে ল্যাপটপ ভেঙ্গে ফেলার ইচ্ছে করে হয়ত। বছরের পর বছর লিনাক্স ইউজ করবেন, একটা দিনও স্লো হবে না! কম্পিউটার বন্ধও করে রাখতে হবে না। দিনের পর দিন কম্পিউটার চালু রাখতে পারবেন। আমি যখন এই লিখাটা লিখছি তখনো আমার কম্পিউটার একটানা ২২ দিন ধরে চলছে, এরমধ্যে একবারও শাট ডাউন করার দরকার হয়নি। বাইরে যাবার সময় ঘুম পাড়িয়ে রেখে গেছি (মানে স্লিপ মুডের কথা বলছি)।&nbsp;</p></li>
+<li><table class="caption-top table">
+<thead>
+<tr class="header">
+<th>আপডেট:&nbsp;**উইন্ডোজের বিরক্তিকর আপডেটের সম্মুখীন হননি এরকম মানুষ হারিকেন দিয়েও খুঁজে একটা পাওয়া যাবে বলে আমার মনে হয় না! ভীষণ রকম স্লো আর ল্যাগি আপডেট, সাথে রিস্টার্ট করার প্যারা তো আছেই! রিস্টার্ট করতে গেলেও চার পাচ মিনিট সময় চলে যায়! জীবনটাই তামাতামা হয়ে যায়! 😀লিনাক্সের যেকোনো অপারেটিং সিস্টেমে এই আপডেটের কাজটা সেরে ফেলতে পারবেন মাত্র একটা ক্লিক দিয়েই। সেইসাথে ইনস্টল থাকা প্রত্যেকটা অ্যাপ আপডেট হয়ে যাবে কোনো ঝামেলা ছাড়াই। উইন্ডোজের মত শুধুমাত্র সিস্টেম আপডেট হবে না। খুঁজে খুঁজে আলাদাভাবে আর কোনো অ্যাপ আপডেট করতে হবে না।</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="../img/posts/0d42327ac8.jpg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td>মাত্র এক ক্লিক এ আপডেটের ঝামেলা শেষ!</td>
+</tr>
+</tbody>
+</table></li>
+<li><table class="caption-top table">
+<thead>
+<tr class="header">
+<th>অ্যাপ ইনস্টলেশন:&nbsp;**উইন্ডোজে নতুন কোনো অ্যাপ ইনস্টল করাও ঝামেলা! গুগল থেকে খুজে খুজে ডাউনলোড করো, তারপর ইনস্টল করো, দুদিন যেতে না যেতেই আবার রেজিস্ট্রেশন কী দিতে হবে নাইলে অ্যাপ কাজ করবে না! মহা মুশকিল! লিনাক্সে এত খোঁজাখুঁজি করতে হবে না। সফটওয়্যার ম্যানেজারে সার্চ করবেন আপনার প্রয়োজনীয় অ্যাপ, একটা ক্লিক করবেন, কিচ্ছা খতম! কোনো সিরিয়াল কী, রেজিট্রেশন ফী হ্যানত্যান ঝামেলা নেই! সফটওয়্যার ম্যানেজার জিনিসটা প্লেস্টোরের মত, সার্চ করবেন আর ডাউনলোড করবেন। এই ফাঁকে একটি তথ্য জানিয়ে দেই, আপনার হাতে থাকা অ্যান্ড্রয়েড ফোনটিও কিন্তু লিনাক্স অপারেটিং সিস্টেম!</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="../img/posts/8d53a9810e.jpg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td>Software Manager/Store</td>
+</tr>
+</tbody>
+</table></li>
+<li><p><strong>প্রাইভেসি:&nbsp;</strong>উইন্ডোজ আপনার অগোচর আপনার প্রত্যেকটি কর্মকাণ্ডই নজরদারী করে, আপনার প্রত্যেকটি ডেটা তাদের সার্ভারে জমা হতে থাকে। লিনাক্স আপনার কোনো ডেটাই তাদের সার্ভারে পাঠায় না, যদি প্রয়োজন বশত কোনো ডেটা বা সিস্টেম লগ তারা নিতে চায়, তার আগে অবশ্যই আপনাকে নোটিফাই করবে।</p></li>
+<li><p><strong>ইউজার ইন্টারফেস:&nbsp;</strong>এবার আসি ইউজার এনভায়রনমেন্ট এর ব্যাপারটায়। সারাটা জীবন ধরে উইন্ডোজের চেহারা দেখতে দেখতে বিরক্ত হয়েছেন? মাঝেমধ্যেই একটু সুন্দর করে সাজাতে চেয়েছেন নিজের কম্পিউটার? কিন্তু কালার ছাড়া আর কোনোকিছু চেঞ্জ করতে পারেননি? তাহলে আপনি চোখ বন্ধ করে লিনাক্স ব্যাবহার শুরু করুন। কালার, ফন্ট, আইকন থেকে শুরু করে কার্নেল পর্যন্ত চেঞ্জ করতে পারবেন দুই একটা ক্লিক করেই! আমি নিজেই তো Asus ল্যাপটপ এ MacBook এর স্বাদ নিচ্ছি! ও আচ্ছা! ম্যাক অপারেটিং সিস্টেমও কিন্তু লিনাক্স কার্নেলেই বানানো! মোদ্দাকথা, আপনি চাইলেই আপনার মনের মাধুরী মিশিয়ে আপনার কম্পিউটার কাস্টমাইজ করতে পারবেন। টাকা দিয়ে কিনেছেন, আপনার কম্পিউটার থাকবে আপনার ইচ্ছামত, তাহলে কেন উইন্ডোজ এর কাছে বন্দী হয়ে থাকবেন? আমার ল্যাপটপের স্ক্রিনশটগুলো দেখুন, ম্যাকবুক ভেবে ভুল করবেন না!</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="../img/posts/cf4abd9e4d.jpg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ফাইল ম্যানেজার&nbsp; |<br>
+———————————- <img src="../img/posts/a4709c40d3.jpg" class="img-fluid"> Application Drawer ———————————-</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="../img/posts/a5c342ac09.jpg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">System Info</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="../img/posts/44cf06da90.jpg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">System Monitor</td>
+</tr>
+</tbody>
+</table></li>
+<li><table class="caption-top table">
+<thead>
+<tr class="header">
+<th>টার্মিনাল:&nbsp;**আপনি যদি অ্যাডভান্স ইউজার হয়ে থাকেন তাহলে উইন্ডোজ কমান্ড লাইনের সাথে নিশ্চয় পরিচিত। উইন্ডোজ কমান্ড লাইন অথবা পাওয়ারশেল জিনিসটাকে আমার কাছে নিছক খেলনা মনে হয়েছে লিনাক্স টার্মিনালের তুলনায়। টার্মিনাল দিয়ে আপনি চাইলে আপনার কম্পিউটার কেন মহাকাশ পর্যন্ত কাঁপিয়ে দিতে পারবেন। আমি একটুও বাড়িয়ে বলছি না, টার্মিনাল এতটাই শক্তিশালী!&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="../img/posts/115dc6cc85.jpg" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td>Terminal</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p>যাই হোক, উইন্ডোজ এ কুয়োর ব্যাঙ হয়ে না থেকে লিনাক্সে আসুন, কম্পিউটিং বিস্ময়কর জগৎটা দেখুন! তবে আশার কথা হলো, দেরীতে হলেও মাইক্রোসফট এতদিনে বুঝতে শুরু করেছে ওপেন সোর্সের গুরুত্ব, লিনাক্সের গুরুত্ব। এবছরই তারা উইন্ডোজের ভিতরেই লিনাক্স ব্যাবহার করার জন্যে WSL (Windows Subsystem for Linux) রিলিজ করেছে। আগে এই কাজটিই করতে হতো বিভিন্নরকম ভার্চুয়াল মেশিন সফটওয়্যার ব্যাবহার করে। এছাড়াও তারা উইন্ডোজের জন্যে নতুন টার্মিনাল ডেভেলপ করা শুরু করেছে।</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="../img/posts/68699a5d29.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">New cmd</td>
+</tr>
+</tbody>
+</table>
+<p>এতক্ষণ ধরে বকবক করেও আমি শুধুমাত্র লিনাক্সের বাহ্যিক দিকটাই একটুখানি তুলে ধরেছি। ভেতরের কথাবার্তা নিয়ে, একজন বিগিনার হিসেবে লিনাক্সের কোন অপারেটিং সিস্টেমটি ব্যাবহার করতে পারেন, কীভাবে ইনস্টল করবেন, সেসব বিস্তারিত লিখবো অন্য একটি লিখায়। ভালো থাকুন। Happy Computing!</p>
+<p>ডেটা সায়েন্সে লিনাক্স কীভাবে কাজে লাগতে পারে জানতে চোখ রাখুন <a href="https://www.statmania.info/search/label/Linux?max-results=20">এখানে</a>। <strong>আরও পড়ুন</strong></p>
+<div style="background-color: white; line-height: 1.2; margin: 0px 0px 3px; padding: 0px; text-align: left; transition: all 0.2s ease-in-out 0s;">
+<p>☛&nbsp;<a href="https://www.statmania.info/2019/05/linux-text-mining.html">লিনাক্স ও ডেটা সায়েন্স: একটি সরল টেক্সট মাইনিং</a></p>
+</div>
+<p>☛&nbsp;<a href="https://www.statmania.info/2019/05/linux-tr.html">লিনাক্স ও ডেটা সায়েন্স: tr কমান্ডের কারিশমা</a></p>
+</div>
+
+
+
+</main> <!-- /main -->
+<script>
+/* Blog-wide "See hint" / "Reveal code" toggles.
+   Markup in a post:
+     ::: {.reveal-code}
+     ::: {.hint}
+     Hint text
+     :::
+
+     ```c
+     code
+     ```
+     :::
+   Without JavaScript the code and hint simply stay visible. */
+(function () {
+  function init() {
+    document.querySelectorAll('.reveal-code').forEach(function (box, n) {
+      var hint = box.querySelector(':scope > .hint');
+      var code = box.querySelector(':scope > .code-copy-outer-scaffold, :scope > .sourceCode, :scope > pre');
+      if (!code) return;
+      var bar = document.createElement('div');
+      bar.className = 'rc-bar';
+      function button(label, target, shown, hidden) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'rc-btn';
+        b.textContent = shown;
+        b.setAttribute('aria-expanded', 'false');
+        b.setAttribute('aria-controls', target.id);
+        b.addEventListener('click', function () {
+          var open = target.classList.toggle('rc-open');
+          b.textContent = open ? hidden : shown;
+          b.setAttribute('aria-expanded', open);
+        });
+        bar.appendChild(b);
+      }
+      code.id = code.id || 'rc-code-' + n;
+      if (hint) {
+        hint.id = hint.id || 'rc-hint-' + n;
+        button('hint', hint, 'See hint', 'Hide hint');
+      }
+      button('code', code, 'Reveal code', 'Hide code');
+      box.insertBefore(bar, box.firstChild);
+      box.classList.add('rc-ready');
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+/* Blogkit: load blogkit.js from the site root, whatever the page depth. */
+(function () {
+  var m = document.querySelector('meta[name="quarto:offset"]');
+  var base = m ? m.getAttribute('content') : '';
+  if (base === './') base = '';
+  var s = document.createElement('script');
+  s.src = base + 'blogkit.js';
+  s.dataset.base = base;
+  document.body.appendChild(s);
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Stat Mania</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../tags.html">
+<p>Tags</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../categories.html">
+<p>Categories</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+<p>About</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

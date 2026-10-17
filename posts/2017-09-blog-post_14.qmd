@@ -1,0 +1,15 @@
+---
+title: 'গণিতের মারপ্যাঁচ: -১ = ১ হয় কি?'
+date: '2017-09-14'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+::: {dir="ltr" style="text-align: left;" trbidi="on"}
+গণিতের ভুল মারপ্যাঁচ দেখিয়ে ভ্যল জিনিস প্রমাণ করতে অনেকেই আনন্দ পান। তবে এতে করে গণিতের বেশ কিছু ধারণা আরও সুস্পষ্ট করে বুঝে নেওয়া সম্ভব। তাই, এসব মারপ্যাঁচগুলোকে সব স,অয় খারাপ দৃষ্টিতে না দেখলেও চলে।
+
+সূত্রঃ
+১। [ব্রিলিয়ান্ট ডট অর্গ](https://brilliant.org/practice/why-complete-this-exploration/?utm_campaign=nls-csub1-pt&utm_source=brilliant&chapter=introduction&problem=algebra-problem-110629&utm_medium=email&utm_term=1_equals_minus_one-a&utm_content=blueButton&auto_login_key=OUrhvKfmvrsG3UBHCenJcPOtHX42eyWj7zbqOMwqZw)
+:::

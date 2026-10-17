@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="আব্দুল্যাহ আদিল মাহমুদ">
+<meta name="dcterms.date" content="2016-09-20">
+<meta name="description" content="গণিতের পাঁচ বিশেষ সংখ্যা">
+
+<title>গণিতের সবচেয়ে সুন্দর সমীকরণ – Stat Mania</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-ccafe2c99a4564d55934ca8539ca9f46.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1f7249002a96980cd454805216f9e3b3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-de4fa3b7647c5fefd9d59d6b8dfc486f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../site_libs/quarto-contrib/quarto-project/blogkit/styles.css">
+</head>
+
+<body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../img/logo.svg" alt="" class="navbar-logo light-content">
+    <img src="../img/logo.svg" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Stat Mania</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tags.html"> 
+<span class="menu-text">Tags</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../categories.html"> 
+<span class="menu-text">Categories</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">গণিতের সবচেয়ে সুন্দর সমীকরণ</h1>
+                  <div>
+        <div class="description">
+          গণিতের পাঁচ বিশেষ সংখ্যা
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Statistics</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>আব্দুল্যাহ আদিল মাহমুদ </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 20, 2016</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<div dir="ltr" style="text-align: left;" data-trbidi="on">
+<p>(লেখাটি এর আগে পাই জিরো টু ইনফিনিটি ম্যাগাজিনে প্রকাশিত হয়) একবার রাণী ক্যাথেরিনের রাজসভায় দাওয়াত পেয়ে ফ্রেঞ্চ দার্শনিক ডেনিস ডিডেরট তার নাস্তিকপন্থী মনোভাবের জোর প্রচার শুরু করেন। কোন উপায় না দেখে রাণী অয়লারকে ডেকে পাঠান। অয়লার সাহেব এসে ডেনিস সাহেবের সাথে ধর্মীয় আলোচনায় যুক্ত হলেন। অয়লার এক পর্যায়ে বললেন তিনি ঈশ্বরের অস্তিত্বের একটি বীজগাণিতিক প্রমাণ দেখাবেন। ডি মরগানের ভাষ্য মতে ডেনিস সাহেব রাজী হলেন এবং অয়লার পরিপূর্ণ আত্মবিশ্বাস নিয়ে বললেন,</p>
+<blockquote class="blockquote">
+<p>“স্যার, যেহেতু <span class="math inline">\(e ^{i \pi} + 1 = 0\)</span>; অতএব ঈশ্বর আছেন।”</p>
+</blockquote>
+<div style="text-align: center;">
+<p>রাজসভার সবাইকে হাসার সুযোগ করে দিয়ে গণিতে অপক্ক ডেনিস সাহেব সাথে সাথে প্রস্থান করেন।<img src="../img/posts/714396f91b.jpg" class="img-fluid"></p>
+</div>
+<p>এই একটি সমীকরণ গণিতের চারটি শাখার মধ্যে সেতুবন্ধন তৈরি করে। e এর আবির্ভাব ক্যালকুলাস থেকে, π আসে জ্যামিতি থেকে, i এর পদচারণা জটিল সংখ্যার জগতে আর ০ ও ১ এর ব্যবহার পাটিগণিতে। অয়লার মনে করতেন গণিতের সবচেয়ে গুরুত্বপূর্ণ পাঁচটি সংখ্যার এই সম্পর্ক কোনো কাকতালীয় ব্যাপার হতেই পারে না। অতএব ঈশ্বর অবশ্যই আছেন আর তিনিই এই সম্পর্ক গড়েছেন।</p>
+<p>এই সংখ্যাগুলো আসলেই একটু স্পেশাল। এখানে, e = ন্যাচারাল লগারিদমের ভিত্তি। π = বৃত্তের পরিধি ও ব্যাসের নির্দিষ্ট অনুপাত i = কাল্পনিক সংখ্যার একক যার মান √ (-1) ০ = যোগজ অভেদ (Additive Identity) ১ = গুনজ অভেদ (Multiplicative Identity) এগুলো কেন বিশেষ সংখ্যা তা একটু বলে নেই।</p>
+<p><strong><u>e (অয়লারের সংখ্যা):</u></strong> <strong><u></u></strong> গণিতের অন্যতম প্রয়োজনীয় ও গুরুত্বপূর্ণ একটি অমূলদ ধ্রুবক হল অয়লারের সংখ্যা e। এই e হল স্বাভাবিক লগারিদমের ভিত্তি। অর্থ্যাৎ আমরা যাকে লন বা ln বলি (Natural Logarithm) সেটা আসলে loge। এর কাছাকাছি মান হল 2.71828। এটাকে এভাবেও লেখা যায়-</p>
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="http://upload.wikimedia.org/math/6/5/2/652b73fdfa9e2066ad5716ed56e837a7.png"><img src="../img/posts/59233e01b5.png" class="img-fluid figure-img"></a></p>
+<figcaption>e = \displaystyle\sum\limits_{n = 0}^{ \infty} \dfrac{1}{n!} = 1 + \frac{1}{1} + \frac{1}{1\cdot 2} + \frac{1}{1\cdot 2\cdot 3} + \cdots</figcaption>
+</figure>
+</div>
+</div>
+<p>সুইশ গণিতবিদ লিওনার্দ অয়লারের নামে একে e বলা হলেও লগারিদমের আলোচনা করতে গিয়ে জন নেপিয়ার প্রথম e এর ধারণা দিয়েছেন। তাই একে নেপিয়ারের ধ্রুবকও বলা হয়।&nbsp;&nbsp;এই e কোন র‍্যানডম নাম্বার নয়। ইতিহাসবিদদের মতে, সত্যিকার অর্থে ধ্রুবকটি বের করেছেন কোন বণিক বা ব্যাংকার। কারণ, সংখ্যাটির চক্রবৃদ্ধি সুদের সাথে সম্পর্ক রয়েছে। আরো সূক্ষ্মভাবে বললে, একক প্রাথমিক পরিমাণ থেকে চক্রবৃদ্ধিতে ১০০% হারে এবং অসীম সংখ্যক সময়কালে বর্ধনশীল যেকোনো বৃদ্ধির সর্বোচ্চ মান হতে পারে এই সংখ্যা।</p>
+<p>সেমন ধরুন, কোনো পণ্যের দাম ছিল ১ টাকা। ১০০% বৃদ্ধিতে ১ বছরে এর দাম হবে ২ টাকা। [চক্রবৃদ্ধির সূত্রানুযায়ী] এখন, হার ১০০% ই রেখে একে দুই সময়কালে ভাগ করে নিয়ে প্রতি ছয় মাস পর ৫০% করে বাড়ালে বছর শেষে দাম দাঁড়াবে ২.২৫ টাকা। অর্থ্যাৎ, কিছুটা বেশি । এভাবে সময়কালকে আরো খণ্ডিত করতে থাকলে বছর শেষে পরিমাণও বাড়তে থাকে। কিন্তু যতই বাড়ে ততই বাড়ার হার কমে অর্থ্যাৎ আগের বার তার আগের বারের চেয়ে যতটুকু বেড়েছিল এবার গত বারের চেয়ে তার চেয়ে কম পরিমাণ বেড়েছে। এটা ঠিক যেন মহাবিশ্বের সম্প্রসারণ নীতির বিপরীত যেখানে গ্যালাক্সিরা যতই দূরে সরে, ততই সরে যাবার বেগ বেড়ে যায়।</p>
+<p>এখন, এই ক্ষেত্রে প্রথম দিকে অধিক খণ্ডায়ানের প্রতিক্রিয়া বেশি হলেও ধীরে ধীরে এ প্রভাব কমতে কমতে একটি নির্দিষ্ট সংখ্যার কাছকাছি আবর্তিত হয়। সেই সংখ্যাটিই হল 2.718 281 828……, অমূলদ ধ্রুবক। চক্রবৃদ্ধির সাথে সম্পর্ক থাকার বদৌলতেই ধ্রুবকটি প্রথম কোনো গণিতবিদের হাতে আবিষ্কৃত না হয়ে হয়েছিল ব্যাংকারের হাতে।</p>
+<p><u><strong>পাই(π)&nbsp;</strong></u></p>
+<p>যে কোনো বৃত্তের পরিধি ও ব্যাসের অনুপাত একটি ধ্রুবক সংখ্যা (π)- এ জ্ঞান চার হাজার বছর প্রাচীন। দূর্ভাগ্যজনক হলেও সত্য এত ন্যাচারাল ও নিরীহ এই ধ্রুবকটিকে দেখলেই এখনও স্কুলপড়ুয়া অনেক শিক্ষার্থী ভয় পায়।&nbsp; ব্যাবীলনীয় ও মিশরীয়রা ছাড়া আর্কিমিডিস ও চীনের যু চংজি সহ অনেক বিখ্যাত গণিতবিদের গবেষণার খোরাক ছিল এই পাই। অবশেষে ১৭০৬ সালে উইলিয়াম জোন্স পাইকে প্রকাশের জন্য π চিহ্নের প্রস্তাব করেন যাকে ১৭৩৭ সালে কাজে লাগিয়ে বিখ্যাত করেন লিওনার্দ অয়লার। ফ্রেঞ্চ গণিতবিদ জর্জ বুফন সম্ভাব্যতা দিয়ে পাই এর মান বের করার সূত্র বের করেন।</p>
+<p><u><strong>কাল্পনিক সংখ্যার প্রতীক (i):</strong></u> <u><strong> </strong></u> i হচ্ছে কাল্পনিক সংখ্যা প্রকাশের একক। <span class="math inline">\(i^2 = -1\)</span>। কাল্পনিক বলার কারণ হল বাস্তবে এমন কোনো সংখ্যা নেই যার বর্গমূল -1 (মাইনাস 1)। অন্য বাস্তব সংখ্যার মতই অবশ্য -1 এর বর্গমূল দুটি যথা i এবং -i।</p>
+<p><strong><u>শূন্য (০):</u></strong> <strong><u></u></strong> 0 কে বলা হয় যোগজ অভেদ (Additive Identity)। এটা হল ‘নাথিং’ বা ‘কিছুই না’ এর গাণিতিক প্রকাশ। এটা নিয়ে একটি কৌতুক হল, এক বন্ধু ০ আবিষ্কার করে বলল, “আমি এটা আবিষ্কার করলাম” <strong>২য় বন্ধুঃ</strong> কী আবিষ্কার করলে, হে? <strong>১ম বন্ধুঃ</strong> কিছুই না! <strong>২য় বন্ধুঃ</strong> !!!!!!!!</p>
+<p>একে যোগজ অভেদ বলার কারণ, ধরুণ, আপনি ক্রমান্বয়ে অনেক কিছু যোগ করবেন। যখন আপনি কিছুই যোগ করেননি তখন আপনার যোগফল ০। ভাবছেন এ আর এমন কি বিশেষত্ব! হ্যাঁ, বিশেষত্বই বটে। একটু পর বলছি। যাই হোক, একে প্রতিকের বদলে সংখ্যা হিসেবে প্রথম আবিষ্কার করেন ভারতীয়রা।</p>
+<p><u><strong>এক (1) :</strong></u> <u><strong> </strong></u> ১ হল গুণজ অভেদ (Multiplicative Identity)। এর বিশেষত্বের কারণ হল, ধরুন আমরা ক্রমান্বয়ে অনেকগুলো সংখ্যা গুণ করবো। তাহলে যখন একটা গুণও করিনি তখন গুণফল ১। কারণ আদি গুণফল ১ না ধরে ০ ধরলে পরবর্তীতে সব গুণফল হয়ে যাবে ০।&nbsp; এটা হল এর সাথে যোগজ অভেদের তারতম্য। আর এ কারণেই লজিক্যালি 0! (0 Factorial) এর মান ১ ধরা হয়। অর্থাৎ এখনও কিছুই গুণ করা হয়নি, মানে হাতে মাত্র ১ আছে। কিন্তু 0 Factorial এর মান ০ হলে ফ্যাক্টোরিয়াল নীতিই অস্তিত্ত্ব হারাত, কারণ যে কোনো কিছুর ফ্যাক্টোরিয়াল হত ০।</p>
+<p><strong>এ জন্যই যোগ-বিয়োগের ক্ষেত্রে কিছু নেই মানে ০ আর গুণ ভাগের ক্ষেত্রে কিছু নেই মানে ১।</strong> এখন, দেখা যাচ্ছে, এই পাঁচ সংখ্যার আসলেই বিশেষত্ব আছে।</p>
+<p><strong>সম্পর্কঃ</strong></p>
+<div style="text-align: center;">
+<p><span class="math inline">\(e ^{i \pi} + 1 = 0\)</span></p>
+</div>
+<p>ছোটবেলায় সরল অঙ্কের সরল ফলাফল (এই অর্থে আসলেই সরল!) পেয়ে আমরা কিছুটা হতাশ হতাম বৈকি, এটা তাহলে তার চে’ বড় হতাশা! এক দিকে গোবেচারা শূন্য আর অপরদিকে কেমন কিম্ভুতকিমাকার একটি আকৃতি! এখন চলুন, এটার প্রমাণ দেখে ফেলি-</p>
+<p>eiπ&nbsp;= -1 বা&nbsp;<span class="math inline">\(e ^{i \pi} + 1 = 0\)</span>&nbsp;হয় কেন- এই প্রশ্নটির আসল রূপ হচ্ছে আসলে eiπ&nbsp;দ্বারা কী বোঝায়। অর্থাৎ কোনো সংখ্যার ঘাত কাল্পনিক হওয়ার মানে কী? এটা বোঝা গেলেই সমীকরণটিও সরল অঙ্কের মতই সরল হয়ে যাবে।</p>
+<p>ডি ময়ভারের সূত্র থেকে আমরা জানতে পারি, সকল x এর জন্য,</p>
+<div style="text-align: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/posts/284f1e5bb2.gif" class="img-fluid figure-img"></p>
+<figcaption>(IMAGE)</figcaption>
+</figure>
+</div>
+</div>
+<p>এই সমীকরণ থেকে এক্সপোনেনশিয়াল ফাংশনের সাথে ত্রিকোণমিতিক ফাংশনের সম্পর্ক ধরা পড়ে। তাহলে, x এর বদলে π বসিয়ে আমরা পাই,&nbsp;<img src="../img/posts/4215649395.gif" class="img-fluid" alt="(IMAGE)">&nbsp;। কারণ, cosπ এর মান -1 এবং sinπ এর মান 0।</p>
+<p><strong>এখন কাজ হচ্ছে প্রমাণ করা যে কে</strong>ন&nbsp;<img src="../img/posts/284f1e5bb2.gif" class="img-fluid" alt="(IMAGE)">,&nbsp;যেটা থেকে বোঝা যায় e এর ঘাত একটি কাল্পনিক সংখ্যা হবার মানে কী।</p>
+<p>সূচকের মৌলিক ধারণা মতে কোনো একটি সংখ্যার ঘাত কাল্পনিক সংখ্যা হওয়া অর্থহীন যেখানে&nbsp;<img src="../img/posts/f5133aa442.gif" class="img-fluid" alt="(IMAGE)">মানে বোঝায় a কে b সংখ্যক বার নিজের সাথে গুণ করা। b ধনাত্মক হলেই কেবল সূচকের এই ধারণা মানানসই হয়। নচেৎ কোন সংখ্যাকে নিজের সাথে i বার (কাল্পনিক সংখ্যক বার) গুণ করার অর্থ কী?</p>
+<p>অবশ্য সূচকের মূল সংজ্ঞায় b এর মান ভগ্নাংশ কিংবা ঋণাত্মক সংখ্যাও হতে পারে না। কিন্তু এর পরেও কোন সংখ্যার ঘাত ঋণাত্মক বা ভগ্নাংশ হলে আমরা তার থেকে অর্থ বের করে নিতে পারি । যেমন, যেহেতু ১/৩ হচ্ছে সেই সংখ্যা যাকে ৩ দ্বারা গুণ করলে ১ পাওয়া যায় সেহেতু a^(1/3) কে অর্থপূর্ণ বলা যাবে এই বলে যে এর ঘাত 3 পর্যন্ত উঠালে a^1 তথা a পাওয়া যাবে। ফলে, a^(1/3) হচ্ছে a এর ঘনমূল (Cube Root)। একইভাবে ঘাত নেগেটিভ হলে আমরা তারও অর্থ বের করতে পারি। যেমন, a^(-2) মানে 1/(a^2)।</p>
+<p>তাহলে একটুখানি ঝামেলা থাকলেও ঘাত ঋণাত্মক বা ভগ্নাংশ হলে আমরা মুশকিলে পড়ি না। দেখা যাক, কাল্পনিক সংখ্যা যে মুশকিলে ফেলে দেয় তার আসান কোথায়। তাহলে, আমাদেরকে সূচককে বা তার ধর্মকে এমনভাবে প্রকাশ করতে হবে যাতে এর ঘাত জটিল সংখ্যা বানানো যায়।</p>
+<div style="text-align: left;">
+<p>এখন, e^x এর ধারাভিত্তিক অসীম সম্প্রসারণ হল-&nbsp;<img src="../img/posts/4da4ad8b3b.gif" class="img-fluid" alt="(IMAGE)"></p>
+</div>
+<p>যেখানে n! (n factorial) মানে হল ১,….n পর্যন্ত গুণফল। ধারাটি আসে ক্যালকুলাসের টেইলর ধারা থেকে। এখন এই অসীম সমষ্টি জটিল সংখ্যার (যাতে কাল্পনিক সংখ্যা বিদ্যমান থাকে) ক্ষেত্রেও অর্থবহ হয়। আমরা যদি x এর বদলে ix বসাই, &nbsp;তাহলে,&nbsp;<img src="../img/posts/159a1ed961.gif" class="img-fluid" alt="(IMAGE)"> এখন টেইলর সিরিজ আরো বলে যে&nbsp;<img src="../img/posts/4eddbf40b2.gif" class="img-fluid" alt="(IMAGE)">&nbsp;হল cosx এর অসীম সমষ্টি এবং&nbsp;<img src="../img/posts/65b002bd7b.gif" class="img-fluid" alt="(IMAGE)">&nbsp;হল sinx এর অসীম সমষ্টি। অতএব,&nbsp;<img src="../img/posts/284f1e5bb2.gif" class="img-fluid" alt="(IMAGE)">। সমীকরণটিকে সাজিয়ে লেখা যায় eiπ&nbsp;+1= 0। ফলে, অনেক জটিল সম্পর্কের সহজ রূপ আমরা পেয়ে গেলাম।সরল ফলাফল!! <strong> </strong> <strong> </strong> <strong>তথ্য সূত্রঃ</strong> [১]https://cs.uwaterloo.ca/~shallit/euler.html [২]http://scidiv.bellevuecollege.edu/Math/Euler.html [৩]https://www.math.toronto.edu/mathnet/questionCorner/epii.html [৪]http://arstechnica.com/civis/viewtopic.php?f=24&amp;t=998695 [৫] https://brilliant.org/discussions/thread/the-discovery-of-the-number-e-2/</p>
+</div>
+
+
+
+</main> <!-- /main -->
+<script>
+/* Blog-wide "See hint" / "Reveal code" toggles.
+   Markup in a post:
+     ::: {.reveal-code}
+     ::: {.hint}
+     Hint text
+     :::
+
+     ```c
+     code
+     ```
+     :::
+   Without JavaScript the code and hint simply stay visible. */
+(function () {
+  function init() {
+    document.querySelectorAll('.reveal-code').forEach(function (box, n) {
+      var hint = box.querySelector(':scope > .hint');
+      var code = box.querySelector(':scope > .code-copy-outer-scaffold, :scope > .sourceCode, :scope > pre');
+      if (!code) return;
+      var bar = document.createElement('div');
+      bar.className = 'rc-bar';
+      function button(label, target, shown, hidden) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'rc-btn';
+        b.textContent = shown;
+        b.setAttribute('aria-expanded', 'false');
+        b.setAttribute('aria-controls', target.id);
+        b.addEventListener('click', function () {
+          var open = target.classList.toggle('rc-open');
+          b.textContent = open ? hidden : shown;
+          b.setAttribute('aria-expanded', open);
+        });
+        bar.appendChild(b);
+      }
+      code.id = code.id || 'rc-code-' + n;
+      if (hint) {
+        hint.id = hint.id || 'rc-hint-' + n;
+        button('hint', hint, 'See hint', 'Hide hint');
+      }
+      button('code', code, 'Reveal code', 'Hide code');
+      box.insertBefore(bar, box.firstChild);
+      box.classList.add('rc-ready');
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<script>
+/* Blogkit: load blogkit.js from the site root, whatever the page depth. */
+(function () {
+  var m = document.querySelector('meta[name="quarto:offset"]');
+  var base = m ? m.getAttribute('content') : '';
+  if (base === './') base = '';
+  var s = document.createElement('script');
+  s.src = base + 'blogkit.js';
+  s.dataset.base = base;
+  document.body.appendChild(s);
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 Stat Mania</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../tags.html">
+<p>Tags</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../categories.html">
+<p>Categories</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+<p>About</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

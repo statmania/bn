@@ -1,0 +1,14 @@
+---
+title: SPSS ফাইলকে R এ আনার সঠিক উপায়
+date: '2022-06-13'
+categories:
+- General
+author: আব্দুল্যাহ আদিল মাহমুদ
+draft: true
+---
+
+অনেকেই SPSS এ কাজ করতে পছন্দ করেন। কারণটা সোজা। দুয়েকটা ক্লিক মেরেই অনেক অনেক কঠিন কাজ অনায়াসে করে ফেলা যায়। তবে একবার যে R এর মজা পেয়ে যায়, তাকে দিয়ে SPSS এর কাজ করানো সম্ভব নয়। 
+
+সেটা করতে গেলে আপাত দৃষ্টিতে কিছু 
+
+https://stackoverflow.com/questions/41663908/what-is-the-best-way-to-import-spss-file-in-r-with-value-labels
